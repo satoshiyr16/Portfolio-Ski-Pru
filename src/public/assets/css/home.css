@@ -1,0 +1,523 @@
+@media (min-width: 1024px){
+  p{
+    margin: 0;
+    padding: 0;
+  }
+  h1{
+    margin: 0;
+  }
+  .article_blade_area{
+  }
+  /* ↓投稿記事一覧 */
+  #article_content{
+    /* margin-bottom: 40px; */
+  }
+  .area_title{
+    margin: 0 auto;
+    width: 700px;
+    padding-left: 30px;
+    /* opacity: 0.5; */
+  }
+  .article_area{
+    display: flex;
+    width: 700px;
+    margin: 0 auto ;
+    padding: 0 10px;
+    overflow-y: scroll;
+    border-radius: 10px;
+  }
+  .article{
+    background-color: #f1f1f1;
+    margin: 20px 20px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .article_img {
+    display: block;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .pro_title{
+    width: 250px;
+    height: 100px;
+  }
+  .title{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+  }
+  .title:hover{
+    color: #949292;
+  }
+  .position1{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .position2{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name_date_area{
+  }
+  .article_user_name{
+    /* display: flex;
+    justify-content: center; */
+  }
+  .article_date{
+    padding-right: 10px;
+    opacity: 0.6;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .like{
+    padding: 5px;
+    color: #ff4a4a;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .today_diary_area{
+    width: 800px;
+    background-color: #f1f1f1;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .date_title{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .skin_tone_area{
+    margin: 15px;
+  }
+  .diary_content_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .double_content_area{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    margin: 20px 0 0;
+  }
+  .single_content_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    width: 350px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .content_text{
+    margin: 5px 0 0;
+  }
+  .sub_text{
+    opacity: 0.5;
+    margin: 5px 0 0;
+  }
+  .diary_none_text{
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+    margin: 30px 0;
+  }
+  .diary_click_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .diary_click{
+    text-decoration: none;
+    color: #000000;
+    width: 170px;
+  }
+  .diary_click:hover{
+    color: #949292;
+  }
+  .diary_edit_area{
+    padding: 10px 0 0;
+  }
+  .diary_edit{
+    text-decoration: none;
+    color: #000000;
+    margin-right: 10px;
+  }
+  .diary_edit:hover{
+    color: #949292;
+  }
+  .edit_modal_area{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 15px 0 0;
+  }
+  .none_article{
+    margin: 90px auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  p{
+    margin: 0;
+    padding: 0;
+  }
+  h1{
+    margin: 0;
+  }
+  .article_blade_area{
+  }
+  /* ↓投稿記事一覧 */
+  #article_content{
+    /* margin-bottom: 40px; */
+  }
+  .area_title{
+    margin: 0 auto;
+    width: 700px;
+    padding-left: 30px;
+    /* opacity: 0.5; */
+  }
+  .article_area{
+    display: flex;
+    width: 700px;
+    margin: 0 auto ;
+    padding: 0 10px;
+    overflow-y: scroll;
+    border-radius: 10px;
+  }
+  .article{
+    background-color: #f1f1f1;
+    margin: 20px 20px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .article_img {
+    display: block;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .pro_title{
+    width: 250px;
+    height: 100px;
+  }
+  .title{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+  }
+  .title:hover{
+    color: #949292;
+  }
+  .position1{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .position2{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name_date_area{
+  }
+  .article_user_name{
+    /* display: flex;
+    justify-content: center; */
+  }
+  .article_date{
+    padding-right: 10px;
+    opacity: 0.6;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .like{
+    padding: 5px;
+    color: #ff4a4a;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .today_diary_area{
+    width: 800px;
+    background-color: #f1f1f1;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .date_title{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .skin_tone_area{
+    margin: 15px;
+  }
+  .diary_content_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .double_content_area{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    margin: 20px 0 0;
+  }
+  .single_content_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    width: 350px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .content_text{
+    margin: 5px 0 0;
+  }
+  .sub_text{
+    opacity: 0.5;
+    margin: 5px 0 0;
+  }
+  .diary_none_text{
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+    margin: 30px 0;
+  }
+  .diary_click_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .diary_click{
+    text-decoration: none;
+    color: #000000;
+    width: 170px;
+  }
+  .diary_click:hover{
+    color: #949292;
+  }
+  .diary_edit_area{
+    padding: 10px 0 0;
+  }
+  .diary_edit{
+    text-decoration: none;
+    color: #000000;
+    margin-right: 10px;
+  }
+  .diary_edit:hover{
+    color: #949292;
+  }
+  .edit_modal_area{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 15px 0 0;
+  }
+  .none_article{
+    margin: 90px auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+  }
+}
+@media (max-width: 767px) {
+  p{
+    margin: 0;
+    padding: 0;
+  }
+  h1{
+    margin: 0;
+  }
+  .article_blade_area{
+  }
+  /* ↓投稿記事一覧 */
+  #article_content{
+    /* margin-bottom: 40px; */
+  }
+  .area_title{
+    margin: 0 auto;
+    width: 500px;
+    padding-left: 30px;
+  }
+  .article_area{
+    display: flex;
+    width: 500px;
+    margin: 0 auto ;
+    padding: 0 10px;
+    overflow-y: scroll;
+    border-radius: 10px;
+  }
+  .article{
+    background-color: #f1f1f1;
+    margin: 20px 20px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .article_img {
+    display: block;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .pro_title{
+    width: 250px;
+    height: 100px;
+  }
+  .title{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+  }
+  .title:hover{
+    color: #949292;
+  }
+  .position1{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .position2{
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name_date_area{
+  }
+  .article_user_name{
+    /* display: flex;
+    justify-content: center; */
+  }
+  .article_date{
+    padding-right: 10px;
+    opacity: 0.6;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .like{
+    padding: 5px;
+    color: #ff4a4a;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 500px;
+    padding-left: 25px;
+  }
+
+  .today_diary_area{
+    width: 500px;
+    background-color: #f1f1f1;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .date_title{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .skin_tone_area{
+    margin: 15px;
+  }
+  .diary_content_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .double_content_area{
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    margin: 20px 0 0;
+  }
+  .single_content_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    width: 200px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .content_text{
+    margin: 5px 0 0;
+  }
+  .sub_text{
+    opacity: 0.5;
+    margin: 5px 0 0;
+  }
+  .diary_none_text{
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+    margin: 30px 0;
+  }
+  .diary_click_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .diary_click{
+    text-decoration: none;
+    color: #000000;
+    width: 170px;
+  }
+  .diary_click:hover{
+    color: #949292;
+  }
+  .diary_edit_area{
+    padding: 10px 0 0;
+  }
+  .diary_edit{
+    text-decoration: none;
+    color: #000000;
+    margin-right: 10px;
+  }
+  .diary_edit:hover{
+    color: #949292;
+  }
+  .edit_modal_area{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: 15px 0 0;
+  }
+  .none_article{
+    margin: 90px auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+  }
+}

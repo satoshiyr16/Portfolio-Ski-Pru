@@ -1,0 +1,6 @@
+
+.container-fluid {
+  background-image: url(../../images/toppage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

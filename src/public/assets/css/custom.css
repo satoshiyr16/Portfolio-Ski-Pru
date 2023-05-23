@@ -1,0 +1,23 @@
+.pagination {
+  color: #333; /* ページネーションのテキスト色を変更 */
+}
+
+.pagination > li > a, .pagination > li > span {
+  background-color: #f5f5f5; /* ページネーションの背景色を変更 */
+  border-color: #ddd; /* ページネーションのボーダー色を変更 */
+  color: #333; /* ページネーションのテキスト色を変更 */
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+  background-color: #ddd; /* ページネーションのアクティブなページの背景色を変更 */
+  border-color: #ddd; /* ページネーションのアクティブなページのボーダー色を変更 */
+  color: #333; /* ページネーションのアクティブなページのテキスト色を変更 */
+  border-width: 0;
+  box-shadow: none;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+  background-color: #949492; /* ページネーションのアクティブなページの背景色を変更 */
+  border-color: #949492; /* ページネーションのアクティブなページのボーダー色を変更 */
+  color: #fff; /* ページネーションのアクティブなページのテキスト色を変更 */
+}

@@ -1,0 +1,74 @@
+.follow_edit{
+  margin: 50px auto;
+  width: 600px;
+  height: 90vh;
+}
+.follow_area{
+  background-color: #f1f1f1;
+  width: 600px;
+  padding: 30px 0;
+  border-radius: 10px;
+}
+.follow_title{
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+}
+.follow_user{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  height: 40px;
+}
+.follow_name{
+  padding: 0 50px;
+  border-right: 1px solid #949492;
+  width: 500px;
+  height: 40px;
+  margin: 0 auto;
+}
+.un_follow{
+  border: none;
+  margin: 0 30px;
+  width: 125px;
+  height: 40px;
+  background: #FFF;
+  border-radius: 10px;
+}
+.follow{
+    border: none;
+    margin: 0 30px;
+    width: 125px;
+    height: 40px;
+    background: #FFF;
+    border-radius: 10px;
+}
+.follow_page{
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  margin: 10px 0;
+}
+.follow_click{
+  text-decoration: none;
+  color: black;
+  width: 125px;
+  border: 1px solid #FFF;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  height: 35px;
+  padding: 5px 0;
+}
+.follow_click:hover{
+  text-decoration: none;
+  color: black;
+  border: 1px solid #949492;
+  border-radius: 5px;
+  width: 125px;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0;
+}

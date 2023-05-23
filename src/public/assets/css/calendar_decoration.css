@@ -1,0 +1,8 @@
+body{
+  height: 100vh;
+}
+#calendar{
+  width: 800px;
+  margin: 0 auto;
+  background-color: #FFF;
+}

@@ -1,0 +1,332 @@
+@media (max-width: 767px) {
+  .container{
+    width: 600px;
+  }
+  .calendar_date_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+  }
+  .date_title_area{
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    height: 110px;
+  }
+  .date_title_area_editver{
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    height: 110px;
+  }
+  .title_area{
+    display: flex;
+  }
+  .edit{
+    padding-top: 30px;
+    padding-left: 10px;
+    font-size: large;
+  }
+  .date_title{
+    font-size: 50px;
+    margin: 0 0 0 10px;
+  }
+  .skin_tone_area{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: 5px 0;
+  }
+  .skin_tone_title{
+    margin: 0;
+  }
+  .skin_tone{
+    font-size: large;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  .calendar_date_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    background-color: #f1f1f1;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+  }
+  .skin_status_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+  }
+  .skin_status_title{
+    margin: 10px 0 0 0;
+  }
+  .radio_area{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .radio{
+    margin: 0 0 0 20px;
+    inline-size: 1.5rem;
+    block-size: 1.3rem;
+    accent-color: #949492;
+  }
+  .status_text{
+    border: none;
+    border-radius: 5px;
+  }
+  .status_text:focus{
+    outline: 1px solid #949492;
+  }
+  .radio_second_area{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .file{
+    margin: 20px;
+  }
+
+  .img_area{
+    display: flex;
+    margin: 20px 10px 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container{
+    width: 800px;
+  }
+  .calendar_date_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
+  }
+  .date_title_area{
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    height: 110px;
+  }
+  .date_title_area_editver{
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    height: 110px;
+  }
+  .title_area{
+    display: flex;
+  }
+  .edit{
+    padding-top: 30px;
+    padding-left: 10px;
+    font-size: large;
+  }
+  .date_title{
+    font-size: 50px;
+    margin: 0 0 0 10px;
+  }
+  .skin_tone_area{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: 5px 0;
+  }
+  .skin_tone_title{
+    margin: 0;
+  }
+  .skin_tone{
+    font-size: large;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  .calendar_date_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    background-color: #f1f1f1;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+  }
+  .skin_status_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+  }
+  .skin_status_title{
+    margin: 10px 0 0 0;
+  }
+  .radio_area{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .radio{
+    margin: 0 0 0 20px;
+    inline-size: 1.5rem;
+    block-size: 1.3rem;
+    accent-color: #949492;
+  }
+  .status_text{
+    border: none;
+    border-radius: 5px;
+  }
+  .status_text:focus{
+    outline: 1px solid #949492;
+  }
+  .radio_second_area{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .file{
+    margin: 20px;
+  }
+
+  .img_area{
+    display: flex;
+    margin: 20px 10px 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container{
+    width: 800px;
+  }
+  .calendar_date_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
+  }
+  .date_title_area{
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    height: 110px;
+  }
+  .date_title_area_editver{
+    margin: 0 20px;
+    background-color: #f1f1f1;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    height: 110px;
+  }
+  .title_area{
+    display: flex;
+  }
+  .edit{
+    padding-top: 30px;
+    padding-left: 10px;
+    font-size: large;
+  }
+  .date_title{
+    font-size: 50px;
+    margin: 0 0 0 10px;
+  }
+  .skin_tone_area{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    margin: 5px 0;
+  }
+  .skin_tone_title{
+    margin: 0;
+  }
+  .skin_tone{
+    font-size: large;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  .calendar_date_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    background-color: #f1f1f1;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+  }
+  .skin_status_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+  }
+  .skin_status_title{
+    margin: 10px 0 0 0;
+  }
+  .radio_area{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .radio{
+    margin: 0 0 0 20px;
+    inline-size: 1.5rem;
+    block-size: 1.3rem;
+    accent-color: #949492;
+  }
+  .status_text{
+    border: none;
+    border-radius: 5px;
+  }
+  .status_text:focus{
+    outline: 1px solid #949492;
+  }
+  .radio_second_area{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .file{
+    margin: 20px;
+  }
+
+  .img_area{
+    display: flex;
+    margin: 20px 10px 10px;
+  }
+}

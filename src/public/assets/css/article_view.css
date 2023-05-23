@@ -1,0 +1,472 @@
+
+a{
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .article_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  .article{
+    width: 475px;
+  }
+  .text_area{
+    text-align: left;
+  }
+  .article_img{
+    width: 475px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .title{
+    margin: 40px 0 30px 0;
+    font-weight: bold;
+  }
+  .date{
+    text-align: right;
+  }
+  .user_area{
+    display: flex;
+  }
+  .user{
+    margin: 10px 0;
+    color: black;
+  }
+  .user:hover{
+    margin: 10px 0;
+    color: #949492;
+  }
+  .follow{
+    border: 1px solid #FFF;
+    background: #f1f1f1;
+    width: 100px;
+    height: 25px;
+    margin: 10px;
+  }
+  .follow:hover{
+    border: 1px solid #949492;
+  }
+  .un_follow{
+    border: none;
+    background: #f1f1f1;
+    width: 120px;
+    height: 25px;
+    margin: 10px;
+  }
+  .un_follow:hover{
+    border: 1px solid #949492;
+  }
+  .like_date_area{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .like_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .like_count{
+    margin-left: 5px;
+  }
+  .date{
+    margin-top: 10px;
+  }
+  .nice{
+    cursor: pointer;
+  }
+  .nice:hover{
+    color: #ff4a4a;
+    cursor: pointer;
+  }
+  .un_nice{
+    cursor: pointer;
+    color: #ff4a4a;
+  }
+  .un_nice:hover{
+    cursor: pointer;
+    color: #ffc0c0;
+  }
+  .tag_area{
+    display: flex;
+    margin-top: 10px;
+  }
+  .tag{
+    margin-right: 5px;
+  }
+  .text{
+    margin: 20px 0;
+  }
+
+  .comment_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 475px;
+    margin: 50px 0 10px;
+  }
+  .comment_scroll_area{
+    overflow-x: scroll;
+    max-height: 300px;
+  }
+  .comment_content_area{
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    padding: 15px 10px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  .comment_content{
+    margin: 0 5px;
+  }
+  .comment_date_user_area{
+    display: flex;
+    align-items: end;
+  }
+  .comment_user_name{
+    margin-right: 5px;
+  }
+  .comment_form_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0;
+  }
+  .comment{
+    width: 380px;
+    height: 30px;
+    border: 1px solid black;
+  }
+  .comment:focus{
+    outline: none;
+  }
+  .comment_btn{
+    border: 1px solid black;
+    background: none;
+    margin-left: 10px;
+    height: 30px;
+  }
+  .comment_btn:hover{
+    border: none;
+    background-color: #f1f1f1;
+    border: 1px solid #949292;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .article_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  .article{
+    width: 500px;
+  }
+  .text_area{
+    text-align: left;
+  }
+  .article_img{
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .title{
+    margin: 40px 0 30px 0;
+    font-weight: bold;
+  }
+  .date{
+    text-align: right;
+  }
+  .user_area{
+    display: flex;
+  }
+  .user{
+    margin: 10px 0;
+    color: black;
+  }
+  .user:hover{
+    margin: 10px 0;
+    color: #949492;
+  }
+  .follow{
+    border: 1px solid #FFF;
+    background: #f1f1f1;
+    width: 100px;
+    height: 25px;
+    margin: 10px;
+  }
+  .follow:hover{
+    border: 1px solid #949492;
+  }
+  .un_follow{
+    border: none;
+    background: #f1f1f1;
+    width: 120px;
+    height: 25px;
+    margin: 10px;
+  }
+  .un_follow:hover{
+    border: 1px solid #949492;
+  }
+  .like_date_area{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .like_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .like_count{
+    margin-left: 5px;
+  }
+  .date{
+    margin-top: 10px;
+  }
+  .nice{
+    cursor: pointer;
+  }
+  .nice:hover{
+    color: #ff4a4a;
+    cursor: pointer;
+  }
+  .un_nice{
+    cursor: pointer;
+    color: #ff4a4a;
+  }
+  .un_nice:hover{
+    cursor: pointer;
+    color: #ffc0c0;
+  }
+  .tag_area{
+    display: flex;
+    margin-top: 10px;
+  }
+  .tag{
+    margin-right: 5px;
+  }
+  .text{
+    margin: 20px 0 100px;
+  }
+
+  .comment_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 500px;
+    margin: 50px 0 10px;
+  }
+  .comment_scroll_area{
+    overflow-x: scroll;
+    max-height: 300px;
+  }
+  .comment_content_area{
+    display: flex;
+    justify-content: space-between;
+    width: 480px;
+    padding: 15px 10px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  .comment_content{
+    margin: 0 5px;
+  }
+  .comment_date_user_area{
+    display: flex;
+    align-items: end;
+  }
+  .comment_user_name{
+    margin-right: 5px;
+  }
+  .comment_form_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0;
+  }
+  .comment{
+    width: 400px;
+    height: 30px;
+    border: 1px solid black;
+  }
+  .comment:focus{
+    outline: none;
+  }
+  .comment_btn{
+    border: 1px solid black;
+    background: none;
+    margin-left: 10px;
+    height: 30px;
+  }
+  .comment_btn:hover{
+    border: none;
+    background-color: #f1f1f1;
+    border: 1px solid #949292;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  .article{
+    width: 500px;
+  }
+  .text_area{
+    text-align: left;
+  }
+  .article_img{
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .title{
+    margin: 40px 0 30px 0;
+    font-weight: bold;
+  }
+  .date{
+    text-align: right;
+  }
+  .user_area{
+    display: flex;
+  }
+  .user{
+    margin: 10px 0;
+    color: black;
+  }
+  .user:hover{
+    margin: 10px 0;
+    color: #949492;
+  }
+  .follow{
+    border: 1px solid #FFF;
+    background: #f1f1f1;
+    width: 100px;
+    height: 25px;
+    margin: 10px;
+  }
+  .follow:hover{
+    border: 1px solid #949492;
+  }
+  .un_follow{
+    border: none;
+    background: #f1f1f1;
+    width: 120px;
+    height: 25px;
+    margin: 10px;
+  }
+  .un_follow:hover{
+    border: 1px solid #949492;
+  }
+  .like_date_area{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  .like_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .like_count{
+    margin-left: 5px;
+  }
+  .date{
+    margin-top: 10px;
+  }
+  .nice{
+    cursor: pointer;
+  }
+  .nice:hover{
+    color: #ff4a4a;
+    cursor: pointer;
+  }
+  .un_nice{
+    cursor: pointer;
+    color: #ff4a4a;
+  }
+  .un_nice:hover{
+    cursor: pointer;
+    color: #ffc0c0;
+  }
+  .tag_area{
+    display: flex;
+    margin-top: 10px;
+  }
+  .tag{
+    margin-right: 5px;
+  }
+  .text{
+    margin: 20px 0;
+  }
+
+  .comment_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 500px;
+    margin: 50px 0 10px;
+  }
+  .comment_scroll_area{
+    overflow-x: scroll;
+    max-height: 300px;
+  }
+  .comment_content_area{
+    display: flex;
+    justify-content: space-between;
+    width: 480px;
+    padding: 15px 10px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  .comment_content{
+    margin: 0 5px;
+  }
+  .comment_date_user_area{
+    display: flex;
+    align-items: end;
+  }
+  .comment_user_name{
+    margin-right: 5px;
+  }
+  .comment_form_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0;
+  }
+  .comment{
+    width: 400px;
+    height: 30px;
+    border: 1px solid black;
+  }
+  .comment:focus{
+    outline: none;
+  }
+  .comment_btn{
+    border: 1px solid black;
+    background: none;
+    margin-left: 10px;
+    height: 30px;
+  }
+  .comment_btn:hover{
+    border: none;
+    background-color: #f1f1f1;
+    border: 1px solid #949292;
+  }
+}

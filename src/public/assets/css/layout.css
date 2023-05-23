@@ -1,0 +1,97 @@
+*{
+  font-family: 'Hannotate TC',sans-serif;
+}
+.container{
+
+}
+#nav_area{
+  margin: 10px;
+}
+.nav_title{
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+.nav_title:hover{
+  text-decoration: none;
+  color: black;
+}
+#openbtn{
+	position:fixed;
+  z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+  width: 50px;
+  height:50px;
+}
+#openbtn span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  border-radius: 2px;
+  /* ↓３行でナビボタン */
+  background-color: black;
+  width: 45%;
+  height: 3px;
+}
+#openbtn span:nth-of-type(1) {
+	top:15px;
+}
+#openbtn span:nth-of-type(2) {
+	top:23px;
+}
+#openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+#g-nav{
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position:fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top:0;
+  right: -100%;
+  width:30%;
+  height: 100vh;/*ナビの高さ*/
+  background: rgba(173, 172, 172,0.5);
+  /* background: linear-gradient(45deg,rgba(88,182,211,.9),rgba(229,93,135,.9));背景色（グラデーション） */
+  /*動き*/
+  transition: all 0.6s;
+}
+
+#g-nav.panelactive{
+  right: 0;
+}
+
+#g-nav ul{
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#g-nav li{
+  list-style: none;
+  text-align: center;
+}
+
+#g-nav li a{
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block;
+  /* 文字を大文字 */
+  text-transform: uppercase;
+  /* 字間調整 */
+	letter-spacing: 0.1em;
+	font-weight: bold;
+  transition: all .5s;
+}
+
+#g-nav li a:hover{
+  color: #FFF;
+}

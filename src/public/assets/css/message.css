@@ -1,0 +1,258 @@
+a{
+  text-decoration: none;
+}
+p{
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .container{
+    width: 700px;
+    margin: 0 auto;
+  }
+  .message_area{
+    background-color: #f1f1f1;
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 500px;
+  }
+  .message_title{
+    height: 70px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  .title{
+    margin: auto 0;
+    font-size: x-large;
+    font-weight: bold;
+  }
+  .message_content_area{
+    width: 450px;
+    overflow-y: scroll;
+    margin: 0 auto;
+  }
+  .message_content{
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 5px 0;
+  }
+  .room_user{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  .room_user_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  .room_user_name{
+    margin: 0 15px;
+    padding: 5px;
+    color: black;
+  }
+  .room_user_name:hover{
+    margin: 0 15px;
+    padding: 5px;
+    color: #949492;
+  }
+  .message_user_area{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 0;
+  }
+  .message_text{
+    margin: 0 10px 0 60px;
+  }
+  .message_path{
+    margin: 10px 10px 0 60px;
+    opacity: 0.6;
+  }
+  .message_name_date_area{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .message_user_name{
+    margin: 0 10px;
+  }
+  .message_date{
+    opacity: 0.6;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container{
+    width: 700px;
+    margin: 0 auto;
+  }
+  .message_area{
+    background-color: #f1f1f1;
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .message_title{
+    height: 70px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+  }
+  .title{
+    margin: auto 0;
+    font-size: x-large;
+    font-weight: bold;
+  }
+  .message_content_area{
+    width: 550px;
+    overflow-y: scroll;
+    margin: 0 auto;
+  }
+  .message_content{
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 5px 0;
+  }
+  .room_user{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  .room_user_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  .room_user_name{
+    margin: 0 15px;
+    padding: 5px;
+    color: black;
+  }
+  .room_user_name:hover{
+    margin: 0 15px;
+    padding: 5px;
+    color: #949492;
+  }
+  .message_user_area{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 0;
+  }
+  .message_text{
+    margin: 0 10px 0 60px;
+  }
+  .message_path{
+    margin: 10px 10px 0 60px;
+    opacity: 0.6;
+  }
+  .message_name_date_area{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .message_user_name{
+    margin: 0 10px;
+  }
+  .message_date{
+    opacity: 0.6;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container{
+    width: 700px;
+    margin: 0 auto;
+  }
+  .message_area{
+    background-color: #f1f1f1;
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .message_title{
+    height: 70px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+  }
+  .title{
+    margin: auto 0;
+    font-size: x-large;
+    font-weight: bold;
+  }
+  .message_content_area{
+    width: 550px;
+    overflow-y: scroll;
+    margin: 0 auto;
+  }
+  .message_content{
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 5px 0;
+  }
+  .room_user{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  .room_user_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  .room_user_name{
+    margin: 0 15px;
+    padding: 5px;
+    color: black;
+  }
+  .room_user_name:hover{
+    margin: 0 15px;
+    padding: 5px;
+    color: #949492;
+  }
+  .message_user_area{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 0;
+  }
+  .message_text{
+    margin: 0 10px 0 60px;
+  }
+  .message_path{
+    margin: 10px 10px 0 60px;
+    opacity: 0.6;
+  }
+  .message_name_date_area{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .message_user_name{
+    margin: 0 10px;
+  }
+  .message_date{
+    opacity: 0.6;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+  }
+}

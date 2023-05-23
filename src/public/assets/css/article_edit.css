@@ -1,0 +1,306 @@
+@media (max-width: 767px) {
+  .edit_area{
+    margin: auto;
+    width: 500px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+  }
+  .edit_image{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  .image{
+    width: 375px;
+    height: 200px;
+    border-radius: 10px;
+  }
+  .edit_button{
+    width: 475px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .img_file{
+    display: none;
+    width: 570px;
+  }
+  .title{
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.7;
+    height: 50px;
+    font-size: 30px;
+    padding: 20px 10px;
+    margin: 20px 25px 0;
+    outline: none;
+  }
+  .title:focus{
+    outline: 1px solid #949292;
+  }
+  .edit_tag{
+    width: 400px;
+    margin: 20px 25px 0;
+  }
+  .tag{
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  .tag:focus{
+    outline: 1px solid #949492;
+  }
+  .edit_text{
+  }
+  .text{
+    height: 70vh;
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.7;
+    font-size: 18px;
+    margin: 20px 25px;
+    padding: 10px;
+    outline: none;
+    background-color: #FFF;
+  }
+  .text:focus{
+    outline: 1px solid #949292;
+  }
+  .update_btn{
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #f1f1f1;
+    background: #FFF;
+    cursor: pointer;
+    padding: 5px 12px;
+  }
+  .update_btn:hover{
+    border: 2px solid #949292;
+    color: black;
+  }
+  .delete_img{
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: #FFF;
+    cursor: pointer;
+    padding: 5px 12px;
+    border: 2px solid #f1f1f1;
+  }
+  .delete_img:hover{
+    border: 2px solid #949292;
+    color: black;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .edit_area{
+    margin: auto;
+    width: 650px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+  }
+  .edit_image{
+  }
+  .image{
+    width: 550px;
+    height: 300px;
+    margin: 0 25px 10px;
+    border-radius: 10px;
+  }
+  .edit_button{
+    width: 650px;
+    text-align: right;
+  }
+  .img_file{
+    display: none;
+    width: 570px;
+  }
+  .title{
+    width: 550px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.7;
+    height: 50px;
+    font-size: 30px;
+    padding: 20px 10px;
+    margin: 20px 25px 0;
+    outline: none;
+  }
+  .title:focus{
+    outline: 1px solid #949292;
+  }
+  .edit_tag{
+    width: 550px;
+    margin: 20px 25px 0;
+  }
+  .tag{
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+  }
+  .tag:focus{
+    outline: 1px solid #949492;
+  }
+  .edit_text{
+  }
+  .text{
+    height: 70vh;
+    width: 550px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.7;
+    font-size: 18px;
+    margin: 20px 25px;
+    padding: 10px;
+    outline: none;
+    background-color: #FFF;
+  }
+  .text:focus{
+    outline: 1px solid #949292;
+  }
+  .edit_button{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .update_btn{
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #f1f1f1;
+    background: #FFF;
+    cursor: pointer;
+    padding: 5px 12px;
+  }
+  .update_btn:hover{
+    border: 2px solid #949292;
+    color: black;
+  }
+  .delete_img{
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: #FFF;
+    cursor: pointer;
+    padding: 5px 12px;
+    border: 2px solid #f1f1f1;
+  }
+  .delete_img:hover{
+    border: 2px solid #949292;
+    color: black;
+  }
+}
+
+@media (min-width: 1024px) {
+  .edit_area{
+    margin: auto;
+    width: 650px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+  }
+  .edit_image{
+  }
+  .image{
+    width: 550px;
+    height: 300px;
+    margin: 0 25px 10px;
+    border-radius: 10px;
+  }
+  .edit_button{
+    width: 650px;
+    text-align: right;
+  }
+  .img_file{
+    display: none;
+    width: 570px;
+  }
+  .title{
+    width: 550px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.7;
+    height: 50px;
+    font-size: 30px;
+    padding: 20px 10px;
+    margin: 20px 25px 0;
+    outline: none;
+  }
+  .title:focus{
+    outline: 1px solid #949292;
+  }
+  .edit_tag{
+    width: 550px;
+    margin: 20px 25px 0;
+  }
+  .tag{
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+  }
+  .tag:focus{
+    outline: 1px solid #949492;
+  }
+  .edit_text{
+  }
+  .text{
+    height: 70vh;
+    width: 550px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.7;
+    font-size: 18px;
+    margin: 20px 25px;
+    padding: 10px;
+    outline: none;
+    background-color: #FFF;
+  }
+  .text:focus{
+    outline: 1px solid #949292;
+  }
+  .edit_button{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .update_btn{
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #f1f1f1;
+    background: #FFF;
+    cursor: pointer;
+    padding: 5px 12px;
+  }
+  .update_btn:hover{
+    border: 2px solid #949292;
+    color: black;
+  }
+  .delete_img{
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: #FFF;
+    cursor: pointer;
+    padding: 5px 12px;
+    border: 2px solid #f1f1f1;
+  }
+  .delete_img:hover{
+    border: 2px solid #949292;
+    color: black;
+  }
+}
