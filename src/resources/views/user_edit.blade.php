@@ -11,6 +11,15 @@
 
 <body>
 <div class="container">
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
   <div class="edit_content_area">
   <form action="{{ route('user_update') }}" method="post" enctype="multipart/form-data">
   @csrf
@@ -20,7 +29,7 @@
         @if(Auth::user()->path)
         <img src="{{ (Auth::user()->path) }}" class="user_img">
         @else
-        <img class="user_img" src="{{ asset('images/article.jpg') }}">
+        <img class="user_img" src="{{ asset('images/Profile.png') }}">
         @endif
         <input type="file" id="file" name="image">
       </div>

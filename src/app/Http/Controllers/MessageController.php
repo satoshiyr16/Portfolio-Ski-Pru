@@ -84,6 +84,10 @@ class MessageController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'text' => 'required|max:50',
+            'image' => 'mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
         $authId = Auth::user()->id;
         $userId = session('data');
         $messages = new Message();

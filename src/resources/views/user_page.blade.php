@@ -17,7 +17,7 @@
                     @if($users->path)
                     <img src="{{  asset($users->path) }}" class="profile_img" alt="プロフィール画像">
                     @else
-                    <img class="profile_img" src="{{ asset('images/article.jpg') }}">
+                    <img class="profile_img" src="{{ asset('images/Profile.png') }}">
                     @endif
                     <div class="profile_text">
                         <div class="users_area">

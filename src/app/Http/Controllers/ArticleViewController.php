@@ -52,6 +52,12 @@ class ArticleViewController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required|max:50',
+            'image' => 'mimes:jpg,jpeg,png,pdf|max:2048',
+            'tag.*' => 'max:15',
+            'content' => 'required',
+        ]);
         $article = ProblemArticle::find($id);
         $article->title = $request->input('title');
         $article->content = $request->input('content');

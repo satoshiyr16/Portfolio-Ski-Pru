@@ -44,6 +44,13 @@ class CalendarController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'skin_status_text' => 'max:500',
+            'acne_status_text' => 'max:500',
+            'food_content_text' => 'max:500',
+            'skincare_content_text' => 'max:500',
+            'images.*' => 'mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
         $authId = \Auth::user()->id;
         $diary_date = session('data');
 
@@ -104,6 +111,13 @@ class CalendarController extends Controller
 
     public function update(Request $request ,$date)
     {
+        $request->validate([
+            'skin_status_text' => 'max:500',
+            'acne_status_text' => 'max:500',
+            'food_content_text' => 'max:500',
+            'skincare_content_text' => 'max:500',
+            'images.*' => 'mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
         $authId = \Auth::user()->id;
         $skin_diary = SkinDiary::where('date',$date)->first();
 

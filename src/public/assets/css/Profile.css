@@ -13,7 +13,7 @@ a{
   #profile_page{
     display: flex;
     justify-content: center;
-    height: 90vh;
+    min-height: 90vh;
   }
   /* ↓プロフィール一覧 */
   #profile_content{
@@ -93,6 +93,7 @@ a{
     margin: 10px 0;
     padding: 20px;
     border-radius: 20px;
+    height: 200px;
   }
   .article_img {
     display: block;
@@ -117,7 +118,8 @@ a{
     color: #949292;
   }
   .position1{
-    height: 80px;
+    height: 90px;
+    width: 210px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -127,9 +129,10 @@ a{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 5px;
   }
   .article_date{
-    padding-right: 20px;
+    padding-top: 10px;
   }
   .pro_edit{
     /* background-color: black; */
@@ -169,7 +172,7 @@ a{
   #profile_page{
     display: flex;
     justify-content: center;
-    height: 90vh;
+    min-height: 90vh;
     align-items: center;
     flex-direction: column;
   }
@@ -249,6 +252,7 @@ a{
     margin: 10px 0;
     padding: 20px;
     border-radius: 20px;
+    height: 250px;
   }
   .article_img {
     display: block;
@@ -272,7 +276,8 @@ a{
     color: #949292;
   }
   .position1{
-    height: 80px;
+    height: 90px;
+    width: 210px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -282,9 +287,10 @@ a{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 5px;
   }
   .article_date{
-    padding-right: 20px;
+
   }
   .pro_edit{
     /* background-color: black; */
@@ -324,7 +330,7 @@ a{
   #profile_page{
     display: flex;
     justify-content: center;
-    height: 90vh;
+    min-height: 90vh;
     align-items: center;
     flex-direction: column;
   }
@@ -390,7 +396,7 @@ a{
   .article_area{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 500px;
     margin: 30px auto;
     padding: 0 10px;
     overflow-x: scroll;
@@ -404,6 +410,8 @@ a{
     margin: 10px 0;
     padding: 20px;
     border-radius: 20px;
+    height: 250px;
+    width: 480px;
   }
   .article_img {
     display: block;
@@ -427,7 +435,8 @@ a{
     color: #949292;
   }
   .position1{
-    height: 80px;
+    height: 90px;
+    width: 210px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -437,9 +446,9 @@ a{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 5px;
   }
   .article_date{
-    padding-right: 20px;
   }
   .pro_edit{
     /* background-color: black; */

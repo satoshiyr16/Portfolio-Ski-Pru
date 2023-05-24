@@ -7,6 +7,15 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <div class="container">
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
   <div class="calendar_date_area">
   <form action="{{ route('skin_diary_update',['date'=>$date]) }}" method="POST" enctype="multipart/form-data">
   @csrf

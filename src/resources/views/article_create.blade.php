@@ -5,6 +5,15 @@
     <link href="{{ asset('assets/css/article_create.css') }}" rel="stylesheet" >
 </head>
 <div class="container">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="create_area">
     <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
     @csrf

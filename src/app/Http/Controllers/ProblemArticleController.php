@@ -46,7 +46,12 @@ class ProblemArticleController extends Controller
 
     public function store(Request $request)
     {
-
+        $request->validate([
+            'title' => 'required|max:50',
+            'image' => 'mimes:jpeg,png,pdf|max:2048',
+            'tag.*' => 'max:15',
+            'content' => 'required',
+        ]);
         $problemArticle = new ProblemArticle();
         $problemArticle->title = $request->input('title');
         $problemArticle->content = $request->input('content');
@@ -81,6 +86,9 @@ class ProblemArticleController extends Controller
 
     public function TagSearch(Request $request)
     {
+        $request->validate([
+            'tag_word' => 'max:15',
+        ]);
         $tag_word = $request->input('tag_word');
         $articles = [];
         if($tag_word){
@@ -101,6 +109,9 @@ class ProblemArticleController extends Controller
 
     public function WordSearch(Request $request)
     {
+        $request->validate([
+            'word' => 'max:50',
+        ]);
         $word = $request->input('word');
         if($word){
             $word_article_results = ProblemArticle::where('title', 'like', '%' . $word . '%')
@@ -120,6 +131,9 @@ class ProblemArticleController extends Controller
 
     public function Comment(Request $request)
     {
+        $request->validate([
+            'comment' => 'max:130',
+        ]);
         $articleId = session('article_id');
         $user_id = \Auth::user()->id;
 

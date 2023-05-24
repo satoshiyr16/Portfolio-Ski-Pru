@@ -55,6 +55,10 @@ class ProfileController extends Controller
 
     public function edit(Request $request)
     {
+        $request->validate([
+            'name' => 'max:12',
+            'introduction' => 'max:100',
+        ]);
         $users = Auth::user();
         $name_input = $request->input('name');
         if($name_input){

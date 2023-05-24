@@ -89,12 +89,12 @@ return [
     'mac_address' => 'The :attribute must be a valid MAC address.',
     'max' => [
         'array' => 'The :attribute must not have more than :max items.',
-        'file' => 'The :attribute must not be greater than :max kilobytes.',
+        'file' => ':attribute は :max MB以下にしてください',
         'numeric' => 'The :attribute must not be greater than :max.',
-        'string' => 'The :attribute must not be greater than :max characters.',
+        'string' => ':attribute は :max 文字以下にしてください',
     ],
     'max_digits' => 'The :attribute must not have more than :max digits.',
-    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => '画像の拡張子が :valuesのを使用してください',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
         'array' => 'The :attribute must have at least :min items.',
@@ -125,7 +125,8 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => ':attributeは必須です',
+    // 'required' => 'The :attribute field is required.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
@@ -179,6 +180,20 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'タイトル',
+        'content' => '投稿内容',
+        'tag.*' => 'タグ',
+        'tag_word' => 'タグ検索時のタグ',
+        'word' => 'タイトル検索時のタイトル',
+        'comment' => 'コメント',
+        'text' => 'メッセージ',
+        'name' => '名前は',
+        'introduction' => '自己紹介分',
+        'skin_status_text' => '肌の詳しい状態欄のテキスト',
+        'acne_status_text' => 'ニキビの詳しい状態欄のテキスト',
+        'food_content_text' => '食事の詳しい詳細欄のテキスト',
+        'skincare_content_text' => 'スキンケアの詳しい詳細欄のテキスト',
+    ],
 
 ];
