@@ -1,6 +1,6 @@
 @media (max-width: 767px) {
   .container{
-    width: 600px;
+    width: 500px;
   }
   .calendar_date_area{
     display: flex;
@@ -102,10 +102,26 @@
   .file{
     margin: 20px;
   }
-
   .img_area{
     display: flex;
     margin: 20px 10px 10px;
+  }
+  .edit_modal_area{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: 15px 20px;
+  }
+  .post{
+    border: none;
+    background: #FFF;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    margin: 0 20px;
+  }
+  .post:hover{
+    border: 2px solid #949492;
   }
 }
 
@@ -213,10 +229,26 @@
   .file{
     margin: 20px;
   }
-
   .img_area{
     display: flex;
     margin: 20px 10px 10px;
+  }
+  .edit_modal_area{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin: 15px 20px;
+  }
+  .post{
+    border: none;
+    background: #FFF;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    margin: 0 20px;
+  }
+  .post:hover{
+    border: 2px solid #949492;
   }
 }
 
@@ -328,5 +360,22 @@
   .img_area{
     display: flex;
     margin: 20px 10px 10px;
+  }
+  .edit_modal_area{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin: 15px 20px;
+  }
+  .post{
+    border: none;
+    background: #FFF;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    margin: 0 20px;
+  }
+  .post:hover{
+    border: 2px solid #949492;
   }
 }

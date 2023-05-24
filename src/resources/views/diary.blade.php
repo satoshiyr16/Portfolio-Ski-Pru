@@ -113,7 +113,7 @@
         <input type="file" class="file" name="images[]" multiple>
       </div>
       <div class="button_area">
-        <button type="submit" class="post">投稿</button>
+        <button type="submit" class="post" style="margin-bottom: 10px;">投稿</button>
     </div>
     </div>
   </form>
