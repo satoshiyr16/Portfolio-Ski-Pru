@@ -11,6 +11,8 @@ use App\Models\Follow;
 use App\Models\Room;
 use App\Models\Room_User;
 use App\Models\Message;
+use App\Notifications\MessageReceived;
+
 
 
 class MessageController extends Controller
@@ -90,6 +92,7 @@ class MessageController extends Controller
         ]);
         $authId = Auth::user()->id;
         $userId = session('data');
+        $notification_user = User::find($userId);
         $messages = new Message();
 
         $first_rooms = Room::where('sender_user_id', $authId)->where('receiver_user_id', $userId)->first();
@@ -111,6 +114,7 @@ class MessageController extends Controller
                 $messages->path = 'storage/' . $file_name;
             }
             $messages->save();
+            $notification_user->notify(new MessageReceived($messages));
         } else {
         // どっちもあてはまる
         // receiver_authの場合 reverse_room_checks
@@ -126,6 +130,7 @@ class MessageController extends Controller
                     $messages->path = 'storage/' . $file_name;
                 }
                 $messages->save();
+                $notification_user->notify(new MessageReceived($messages));
             } else {
                 $messages->text = $request->input('text');
                 $messages->user_id = \Auth::id();
@@ -138,6 +143,7 @@ class MessageController extends Controller
                     $messages->path = 'storage/' . $file_name;
                 }
                 $messages->save();
+                $notification_user->notify(new MessageReceived($messages));
             }
         }
         if(!$first_rooms && $already_rooms){
@@ -152,6 +158,7 @@ class MessageController extends Controller
                 $messages->path = 'storage/' . $file_name;
             }
             $messages->save();
+            $notification_user->notify(new MessageReceived($messages));
         } else {
             $messages->text = $request->input('text');
             $messages->user_id = \Auth::id();
@@ -164,6 +171,7 @@ class MessageController extends Controller
                 $messages->path = 'storage/' . $file_name;
             }
             $messages->save();
+            $notification_user->notify(new MessageReceived($messages));
         }
 
 

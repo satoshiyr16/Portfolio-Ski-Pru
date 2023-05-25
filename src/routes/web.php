@@ -10,6 +10,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\AnnouncementController;
 use App\Models\SkinDiary;
 
 /*
@@ -95,3 +96,7 @@ Route::get('/article_word_search', [ProblemArticleController::class, 'WordSearch
 Route::get('/diary_data_get', [CalendarController::class, 'data_get'])->name('calendar');
 
 Route::post('/comment/{id}',[ProblemArticleController::class, 'comment'] )->name('comment');
+
+Route::middleware(['auth'])->get('/announcement_show', [AnnouncementController::class, 'show'])->name('announcement.show');
+
+Route::middleware(['auth'])->get('/announcement_list', [AnnouncementController::class, 'list'])->name('copy');

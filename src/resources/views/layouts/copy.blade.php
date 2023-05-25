@@ -22,6 +22,7 @@
 
     <link href="{{ asset('assets/css/layout.css') }}" rel="stylesheet" >
 
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -32,8 +33,21 @@
         <a class="nav_title" href="{{ url('/') }}">
             Ski Pru
         </a>
+        <div id="app">
+            <!-- お知らせの表示ボタン -->
+            <button id="showNotificationsBtn" class="btn btn-primary">お知らせを表示</button>
+
+            <!-- お知らせのリスト -->
+            <div id="notifications" class="notifications" style="display: none;">
+                <ul id="notificationsList">
+                </ul>
+            </div>
+        </div>
+    </div>
+
         <div id="openbtn"><span></span><span></span><span></span></div>
         <nav id="g-nav">
+
             <div id="g-nav-list">
             <ul>
                 <li><a href="{{ url('/home') }}">HOME</a></li>
@@ -74,18 +88,49 @@
         </nav>
     </div>
 </div>
-
 <main class="py-4">
     @yield('content')
 </main>
 
-{{-- <script type="module">
-    const open = document.getElementById('openbtn');
-    open.addEventListener('click',function(){
-        $(this).toggleClass('active');
-        $("#g-nav").toggleClass('panelactive');
-});
-</script> --}}
 <script src="{{ asset('assets/js/layouts.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="module">
+    $(document).ready(function() {
+    $('#showNotificationsBtn').click(function() {
+        $('#notifications').toggle();
+        fetchNotifications(); // お知らせの表示ボタンをクリックしたら通知を取得する関数を呼び出す
+    });
+
+    function fetchNotifications() {
+        const url = '/announcement_list'; // 通知を取得するエンドポイントのURL
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function(response) {
+                const notifications = response.data;
+                const notificationsList = $('#notificationsList');
+                notificationsList.empty();
+
+                if (notifications.length > 0) {
+                    for (let i = 0; i < notifications.length; i++) {
+                        const notification = notifications[i];
+                        const listItem = $('<li>');
+                        const message = $('<p>').text(notification.message);
+                        // その他の通知のデータを表示する要素を作成
+
+                        listItem.append(message);
+                        notificationsList.append(listItem);
+                    }
+                    $('#notifications').show();
+                }
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    }
+});
+
+</script>
 </body>
 </html>
