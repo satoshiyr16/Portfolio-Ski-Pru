@@ -33,15 +33,14 @@
         <a class="nav_title" href="{{ url('/') }}">
             Ski Pru
         </a>
-        <div id="app">
-            <!-- お知らせの表示ボタン -->
-            <button id="showNotificationsBtn" class="btn btn-primary">お知らせを表示</button>
-
-            <!-- お知らせのリスト -->
-            <div id="notifications" class="notifications" style="display: none;">
-                <ul id="notificationsList">
-                </ul>
-            </div>
+        <div class="notifications">
+            @forelse(auth()->user()->notifications()->take(5)->get() as $notification)
+                <div class="{{ is_null($notification->read_at) ? 'un-read' : '' }}">
+                    <p>{{ $notification->data['message']}}</p>
+                </div>
+            @empty
+                <p>まだ通知はありません</p>
+            @endforelse
         </div>
     </div>
 
@@ -95,41 +94,46 @@
 <script src="{{ asset('assets/js/layouts.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="module">
-    $(document).ready(function() {
-    $('#showNotificationsBtn').click(function() {
-        $('#notifications').toggle();
-        fetchNotifications(); // お知らせの表示ボタンをクリックしたら通知を取得する関数を呼び出す
-    });
+//     $(document).ready(function() {
+//     // ページ読み込み時に通知を取得
+//     // getNotifications();
 
-    function fetchNotifications() {
-        const url = '/announcement_list'; // 通知を取得するエンドポイントのURL
-        $.ajax({
-            url: url,
-            method: 'GET',
-            success: function(response) {
-                const notifications = response.data;
-                const notificationsList = $('#notificationsList');
-                notificationsList.empty();
+//     // お知らせボタンがクリックされた時の処理
+//     $('#notification-button').click(function() {
+//         // 通知を取得
+//         getNotifications();
+//     });
+// });
 
-                if (notifications.length > 0) {
-                    for (let i = 0; i < notifications.length; i++) {
-                        const notification = notifications[i];
-                        const listItem = $('<li>');
-                        const message = $('<p>').text(notification.message);
-                        // その他の通知のデータを表示する要素を作成
+// function getNotifications() {
+//     $.ajax({
+//         url: '/notifications', // 通知を取得するAPIのエンドポイント
+//         type: 'GET',
+//         dataType: 'json',
+//         success: function(response) {
+//             // 通知を表示するための処理
+//             displayNotifications(response);
+//         },
+//         error: function(xhr, status, error) {
+//             console.log(xhr.responseText);
+//         }
+//     });
+// }
 
-                        listItem.append(message);
-                        notificationsList.append(listItem);
-                    }
-                    $('#notifications').show();
-                }
-            },
-            error: function(error) {
-                console.error(error);
-            }
-        });
-    }
-});
+// function displayNotifications(notifications) {
+//     var notificationsContainer = $('#notifications');
+
+//     // 通知を表示するための処理を実装
+//     notificationsContainer.empty(); // 既存の通知をクリア
+
+//     if (notifications.length === 0) {
+//         notificationsContainer.append('<p>通知はありません。</p>');
+//     } else {
+//         notifications.forEach(function(notification) {
+//             notificationsContainer.append('<p>' + notification.message + '</p>');
+//         });
+//     }
+// }
 
 </script>
 </body>

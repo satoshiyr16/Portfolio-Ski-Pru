@@ -97,6 +97,6 @@ Route::get('/diary_data_get', [CalendarController::class, 'data_get'])->name('ca
 
 Route::post('/comment/{id}',[ProblemArticleController::class, 'comment'] )->name('comment');
 
-Route::middleware(['auth'])->get('/announcement_show', [AnnouncementController::class, 'show'])->name('announcement.show');
+// Route::middleware(['auth'])->get('/announcement_show', [AnnouncementController::class, 'show'])->name('announcement.show');
 
-Route::middleware(['auth'])->get('/announcement_list', [AnnouncementController::class, 'list'])->name('copy');
+Route::middleware(['auth'])->get('/notifications', [AnnouncementController::class, 'index'])->name('copy');

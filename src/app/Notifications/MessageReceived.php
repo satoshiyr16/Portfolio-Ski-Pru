@@ -2,23 +2,25 @@
 
 namespace App\Notifications;
 
+use App\Models\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\DatabaseMessage;
 use Illuminate\Notifications\Notification;
 
 class MessageReceived extends Notification
 {
     use Queueable;
 
+    private Message $message;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Message $message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -33,13 +35,6 @@ class MessageReceived extends Notification
     }
 
     /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-
-    /**
      * Get the array representation of the notification.
      *
      * @param  mixed  $notifiable
@@ -49,7 +44,7 @@ class MessageReceived extends Notification
     {
         // 通知のデータを返します
         return [
-            'message' => '新しいメッセージが届きました',
+            'message' => $this->message->text,
             // その他のデータをここに追加できます
         ];
     }

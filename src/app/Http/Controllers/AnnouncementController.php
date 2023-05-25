@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use App\Models\AnnouncementRead;
+use App\Models\user;
+use Illuminate\Foundation\Auth\User as AuthUser;
 
 class AnnouncementController extends Controller
 {
@@ -25,10 +27,9 @@ class AnnouncementController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function list(Request $request) {
-
+    public function index() {
         $user = \Auth::user();
-        $notifications = $user->notifications;
-        return response()->json(['data' => $notifications]);
+        $notifications = $user->unreadNotifications;
+        return response()->json($notifications);
     }
 }

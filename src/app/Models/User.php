@@ -104,4 +104,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Comment');
     }
 
+    public function unreadNotifications()
+    {
+        return $this->notifications()->whereNull('read_at');
+    }
+
 }
