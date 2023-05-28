@@ -12,6 +12,7 @@ use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Models\user;
 use App\Models\Follow;
+use App\Notifications\MessageReceived;
 
 
 class ProblemArticleController extends Controller
@@ -142,6 +143,9 @@ class ProblemArticleController extends Controller
         $commentTable->problem_article_id = $articleId;
         $commentTable->comment = $request->input('comment');
         $commentTable->save();
+        $article = ProblemArticle::find($articleId);
+        $article_user = $article->user;
+        $article_user->notify(new MessageReceived($commentTable));
         return redirect()->back();
     }
 }

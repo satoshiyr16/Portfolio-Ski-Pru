@@ -2,7 +2,6 @@
 
 namespace App\Notifications;
 
-use App\Models\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\DatabaseMessage;
@@ -12,15 +11,15 @@ class MessageReceived extends Notification
 {
     use Queueable;
 
-    private Message $message;
+    private $data;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Message $message)
+    public function __construct($data)
     {
-        $this->message = $message;
+        $this->data = $data;
     }
 
     /**
@@ -42,10 +41,6 @@ class MessageReceived extends Notification
      */
     public function toDatabase($notifiable)
     {
-        // 通知のデータを返します
-        return [
-            'message' => $this->message->text,
-            // その他のデータをここに追加できます
-        ];
+        return $this->data;
     }
 }

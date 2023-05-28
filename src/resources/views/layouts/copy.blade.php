@@ -33,17 +33,13 @@
         <a class="nav_title" href="{{ url('/') }}">
             Ski Pru
         </a>
-        <div class="notifications">
-            @forelse(auth()->user()->notifications()->take(5)->get() as $notification)
-                <div class="{{ is_null($notification->read_at) ? 'un-read' : '' }}">
-                    <p>{{ $notification->data['message']}}</p>
-                </div>
-            @empty
-                <p>まだ通知はありません</p>
-            @endforelse
-        </div>
     </div>
-
+    <div class="notifications">
+        @foreach(auth()->user()->notifications()->get() as $notification)
+                <p>{{ $notification->data['message']}}</p>
+                {{-- <p>{{ $notification->data['comment']}}</p> --}}
+        @endforeach
+    </div>
         <div id="openbtn"><span></span><span></span><span></span></div>
         <nav id="g-nav">
 

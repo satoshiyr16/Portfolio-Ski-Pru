@@ -142,6 +142,7 @@ class MessageController extends Controller
                     $messages->path = 'storage/' . $file_name;
                 }
                 $messages->save();
+
                 $notification_user->notify(new MessageReceived($messages));
             }
         }

@@ -9,6 +9,7 @@ use App\Models\Like;
 use App\Models\SkinDiary;
 use App\Models\DiaryImage;
 use Carbon\Carbon;
+use Illuminate\Notifications\Notification;
 
 class HomeController extends Controller
 {
@@ -50,6 +51,7 @@ class HomeController extends Controller
             }
             return view('home', compact('new_articles','follow_articles','today_diary','today','images'));
         }
+
 
         return view('home', compact('new_articles','follow_articles','today_diary','today'));
     }
