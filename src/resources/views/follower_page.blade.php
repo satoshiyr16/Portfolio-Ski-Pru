@@ -16,7 +16,7 @@
       <p class="follow_title">フォロワー</p>
       @foreach($followers as $index=>$follower)
       <div class="follow_user">
-        <p class="follow_name">{{ $follower->name }}</p>
+        <p class="follow_name"><a class="user_page"href="{{ route('user_page', ['id'=>$follower->id]) }}">{{ $follower->name }}</a></p>
         <button class="un_follow" id="un_follow{{ $index }}" onclick="destroy({{ $follower->id }},{{ $index }})">フォロー解除</button>
         <button class="follow" id="follow{{ $index }}" onclick="follow({{ $follower->id }},{{ $index }})" style="display: none">フォロー</button>
       </div>

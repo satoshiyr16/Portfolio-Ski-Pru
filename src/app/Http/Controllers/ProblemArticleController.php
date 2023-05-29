@@ -12,7 +12,7 @@ use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Models\user;
 use App\Models\Follow;
-use App\Notifications\MessageReceived;
+use App\Notifications\NotificationReceived;
 
 
 class ProblemArticleController extends Controller
@@ -135,17 +135,21 @@ class ProblemArticleController extends Controller
         $request->validate([
             'comment' => 'max:130',
         ]);
-        $articleId = session('article_id');
+        $auth_user = \Auth::user();
         $user_id = \Auth::user()->id;
-
+        $comment_send_user = $auth_user->name;
+        $article_id = $request->input('article_id');
         $commentTable = new Comment();
         $commentTable->user_id = $user_id;
-        $commentTable->problem_article_id = $articleId;
+        $commentTable->problem_article_id = $article_id;
         $commentTable->comment = $request->input('comment');
         $commentTable->save();
-        $article = ProblemArticle::find($articleId);
+        $notificationData = [
+            'comment' => "{$comment_send_user} からコメント: {$commentTable->comment}",
+        ];
+        $article = ProblemArticle::find($article_id);
         $article_user = $article->user;
-        $article_user->notify(new MessageReceived($commentTable));
+        $article_user->notify(new NotificationReceived($notificationData));
         return redirect()->back();
     }
 }

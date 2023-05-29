@@ -11,7 +11,7 @@ use App\Models\Follow;
 use App\Models\Room;
 use App\Models\Room_User;
 use App\Models\Message;
-use App\Notifications\MessageReceived;
+use App\Notifications\NotificationReceived;
 
 
 
@@ -90,7 +90,9 @@ class MessageController extends Controller
             'text' => 'required|max:50',
             'image' => 'mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
-        $authId = Auth::user()->id;
+        $auth_user = Auth::user();
+        $authId = $auth_user->id;
+        $message_send_user = $auth_user->name;
         $userId = session('data');
         $notification_user = User::find($userId);
         $messages = new Message();
@@ -112,7 +114,11 @@ class MessageController extends Controller
                 $messages->path = 'storage/' . $file_name;
             }
             $messages->save();
-            $notification_user->notify(new MessageReceived($messages));
+            $notificationData = [
+                'message' => "{$message_send_user} からメッセージ: {$messages->text}",
+                // 他のデータを必要に応じて追加
+            ];
+            $notification_user->notify(new NotificationReceived($notificationData));
         } else {
             // $first_rooms が存在する場合の処理
             if ($first_rooms) {
@@ -127,7 +133,11 @@ class MessageController extends Controller
                     $messages->path = 'storage/' . $file_name;
                 }
                 $messages->save();
-                $notification_user->notify(new MessageReceived($messages));
+                $notificationData = [
+                    'message' => "{$message_send_user} からメッセージ: {$messages->text}",
+                    // 他のデータを必要に応じて追加
+                ];
+                $notification_user->notify(new NotificationReceived($notificationData));
             }
             // $already_rooms が存在する場合の処理
             elseif ($already_rooms) {
@@ -142,8 +152,11 @@ class MessageController extends Controller
                     $messages->path = 'storage/' . $file_name;
                 }
                 $messages->save();
-
-                $notification_user->notify(new MessageReceived($messages));
+                $notificationData = [
+                    'message' => "{$message_send_user} からメッセージ: {$messages->text}",
+                    // 他のデータを必要に応じて追加
+                ];
+                $notification_user->notify(new NotificationReceived($notificationData));
             }
         }
 

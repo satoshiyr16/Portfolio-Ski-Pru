@@ -80,6 +80,7 @@
                 <div class="comment_form_area">
                     <form method="POST" action="{{ route('comment', ['id'=>$article->id]) }}">
                     @csrf
+                        <input value="{{ $article->id }}" type="hidden" name="article_id" />
                         <input type="text" name="comment" class="comment"></textarea>
                         <button type="submit" class="comment_btn">コメント</button>
                     </form>

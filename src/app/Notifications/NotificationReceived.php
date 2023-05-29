@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\DatabaseMessage;
 use Illuminate\Notifications\Notification;
 
-class MessageReceived extends Notification
+class NotificationReceived extends Notification
 {
     use Queueable;
 

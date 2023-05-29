@@ -4,18 +4,42 @@
 .container{
 
 }
-#nav_area{
+.header_area{
+  display: flex;
+  justify-content: space-between;
+}
+#header_title_area{
   margin: 10px;
 }
-.nav_title{
+.header_title{
   margin: 0;
   text-decoration: none;
   color: black;
   font-size: 40px;
 }
-.nav_title:hover{
+.header_title:hover{
   text-decoration: none;
   color: black;
+}
+.notification_area{
+  margin: 20px;
+}
+.notification_scroll{
+  padding: 10px;
+  width: 400px;
+  max-height: 150px;
+  overflow-x: scroll;
+}
+.notification_content{
+  background-color: #eafdeb;
+  padding: 5px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  color: black;
+}
+.none_notification{
+  display: flex;
+  justify-content: center;
 }
 #openbtn{
 	position:fixed;

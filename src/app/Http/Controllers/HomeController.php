@@ -55,4 +55,11 @@ class HomeController extends Controller
 
         return view('home', compact('new_articles','follow_articles','today_diary','today'));
     }
+
+    public function NotificationsDelete(){
+
+        \Auth::user()->notifications()->delete();
+
+        return redirect()->back();
+    }
 }
