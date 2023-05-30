@@ -35,8 +35,8 @@
         </div>
         <div class="notification_nav_area">
             <div class="notification_area">
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="font-size: large">通知<i class="far fa-bell" style="margin-left: 5px"></i></a>
+                <div class="nav-item dropdown" style="display: flex">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="font-size: large">通知<i class="far fa-bell" style="margin-left: 10px;"></i><span style="margin-left: 5px;font-size: small;">{{ Auth::user()->unreadNotifications->count() }}</span></a>
                     <ul class="dropdown-menu notification_scroll" style="border: none;
                     background: rgba(255,255,255,0.5);">
                     @if(auth()->user()->notifications->isNotEmpty())

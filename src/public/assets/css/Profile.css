@@ -7,7 +7,7 @@ body{
 a{
   text-decoration: none;
 }
-@media (min-width: 1150px) {
+@media (min-width: 1230px) {
   .container{
   }
   #profile_page{
@@ -166,7 +166,7 @@ a{
     color: #949292;
   }
 }
-@media (min-width: 768px) and (max-width: 1149px) {
+@media (min-width: 768px) and (max-width: 1229px) {
   .container{
   }
   #profile_page{

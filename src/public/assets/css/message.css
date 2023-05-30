@@ -181,12 +181,12 @@ p{
     height: 90vh;
     flex-direction: column;
     border-radius: 10px;
-    width: 700px;
+    width: 900px;
     margin: 0 auto;
   }
   .message_title{
     height: 70px;
-    width: 700px;
+    width: 900px;
     display: flex;
     justify-content: center;
   }
@@ -196,9 +196,10 @@ p{
     font-weight: bold;
   }
   .message_content_area{
-    width: 550px;
+    width: 650px;
     overflow-y: scroll;
     margin: 0 auto;
+    /* height: 65vh; */
   }
   .message_content{
     background-color: #FFF;

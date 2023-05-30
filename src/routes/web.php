@@ -11,6 +11,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Models\SkinDiary;
 
 /*
@@ -100,3 +101,5 @@ Route::post('/comment/{id}',[ProblemArticleController::class, 'comment'] )->name
 Route::middleware(['auth'])->get('/notifications', [AnnouncementController::class, 'index'])->name('copy');
 
 Route::post('notifications_delete', [HomeController::class, 'NotificationsDelete'])->name('notifications_delete');
+
+Route::get('/guest-login', [LoginController::class, 'guestLogin'])->name('guest.login');

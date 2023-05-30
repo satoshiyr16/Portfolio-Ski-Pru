@@ -1,6 +1,331 @@
-
-.container-fluid {
-  background-image: url(../../images/toppage.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+*{
+  font-family: 'Hannotate TC',sans-serif;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+@media (min-width: 1170px) {
+  .toppage_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url(../../images/toppage_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #top_area{
+    display: flex;
+    flex-direction: column;
+  }
+  .title_login_area{
+    display: flex;
+  }
+  .title_area{
+    width: 900px;
+  }
+  .title{
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .subtitle{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .login_area{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .login{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: large;
+    color: black;
+    margin: 20px 0;
+  }
+  .login:hover{
+    color: #949496;
+  }
+  .function_area{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .content_area{
+    margin: 20px 0;
+  }
+  .content_title{
+    font-family: 'Yomogi', cursive;
+    font-size: 50px;
+  }
+  .text_img_area{
+    display: flex;
+    justify-content: space-between;
+  }
+  .text{
+    font-size: 30px;
+    border-bottom: 3px solid yellow;
+  }
+  .sub_text{
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .red{
+    color: #ff4a4a;
+  }
+  .orange{
+    color: #ffa53f;
+  }
+  .img_1{
+    width: 500px;
+    height: 300px;
+    margin:  0 auto;
+  }
+  .img_2{
+    width: 450px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  .img_3{
+    width: 450px;
+    height: 350px;
+    margin:  0 auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1169px){
+  .toppage_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url(../../images/toppage_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #top_area{
+    display: flex;
+    flex-direction: column;
+  }
+  .title_login_area{
+    display: flex;
+    justify-content: center;
+  }
+  .title_area{
+    width: 500px;
+  }
+  .title{
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .subtitle{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .login_area{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+  }
+  .login{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: large;
+    color: black;
+    margin: 20px 0;
+  }
+  .login:hover{
+    color: #949496;
+  }
+  .function_area{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content_area{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content_title{
+    font-family: 'Yomogi', cursive;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .text_img_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .text{
+    font-size: 30px;
+    border-bottom: 3px solid yellow;
+    display: inline-block;
+  }
+  .sub_text{
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .red{
+    color: #ff4a4a;
+  }
+  .orange{
+    color: #ffa53f;
+  }
+  .img_1{
+    width: 500px;
+    height: 300px;
+    margin:  0 auto;
+  }
+  .img_2{
+    width: 450px;
+    height: 300px;
+    margin: 0 auto 20px;
+  }
+  .img_3{
+    width: 450px;
+    height: 350px;
+    margin:  0 auto;
+  }
+}
+@media (max-width: 767px){
+  .toppage_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url(../../images/toppage_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #top_area{
+    display: flex;
+    flex-direction: column;
+  }
+  .title_login_area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:  0 auto;
+    width: 500px;
+  }
+  .title_area{
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .title{
+    font-size: 140px;
+    display: flex;
+    justify-content: center;
+  }
+  .subtitle{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  .login_area{
+    display: flex;
+    justify-content: center;
+    margin: 50px 20px;
+  }
+  .login{
+    width: 210px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: large;
+    color: black;
+    margin: 10px;
+    text-align: center;
+  }
+  .login:hover{
+    color: #949496;
+  }
+  .function_area{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5px;
+  }
+  .content_area{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content_title{
+    font-family: 'Yomogi', cursive;
+    font-size: 50px;
+  }
+  .text_img_area{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .text{
+    font-size: 30px;
+    border-bottom: 3px solid yellow;
+    display: inline-block;
+  }
+  .sub_text{
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .red{
+    color: #ff4a4a;
+  }
+  .orange{
+    color: #ffa53f;
+  }
+  .img_1{
+    width: 500px;
+    height: 300px;
+    margin:  0 auto;
+  }
+  .img_2{
+    width: 450px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  .img_3{
+    width: 450px;
+    height: 350px;
+    margin:  0 auto;
+  }
 }
