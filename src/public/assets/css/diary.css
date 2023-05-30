@@ -254,7 +254,7 @@
 
 @media (min-width: 1024px) {
   .container{
-    width: 800px;
+    width: 100%;
   }
   .calendar_date_area{
     display: flex;

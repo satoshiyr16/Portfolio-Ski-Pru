@@ -48,7 +48,7 @@ p{
   }
   .chat_area{
     background: none;
-    width: 500px;
+    width: 700px;
     height: 10vh;
     border-radius: 5px;
     margin: 0;
@@ -57,10 +57,36 @@ p{
     justify-content: center;
   }
   .chat_position{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .chat_btn_area{
+    display: flex;
+    margin-top: 10px;
   }
   .chat{
     margin: 0 10px;
     width: 400px;
+
+  }
+  .chat:focus{
+    outline: 1px solid #949492;
+  }
+  .file{
+    margin: 10px;
+  }
+  .send_btn{
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+  }
+  .send_btn:hover{
+    background-color: #949492;
   }
   .message_img{
     max-width: 550px;
@@ -125,10 +151,36 @@ p{
     justify-content: center;
   }
   .chat_position{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .chat_btn_area{
+    display: flex;
+    margin-top: 10px;
   }
   .chat{
     margin: 0 10px;
     width: 600px;
+
+  }
+  .chat:focus{
+    outline: 1px solid #949492;
+  }
+  .file{
+    margin: 10px;
+  }
+  .send_btn{
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+  }
+  .send_btn:hover{
+    background-color: #949492;
   }
   .message_img{
     max-width: 550px;
@@ -193,10 +245,36 @@ p{
     justify-content: center;
   }
   .chat_position{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .chat_btn_area{
+    display: flex;
+    margin-top: 10px;
   }
   .chat{
     margin: 0 10px;
     width: 600px;
+
+  }
+  .chat:focus{
+    outline: 1px solid #949492;
+  }
+  .file{
+    margin: 10px;
+  }
+  .send_btn{
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+  }
+  .send_btn:hover{
+    background-color: #949492;
   }
   .message_img{
     max-width: 550px;

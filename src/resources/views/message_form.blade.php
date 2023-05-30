@@ -38,9 +38,11 @@
                 <form action="{{ route('message_data') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="chat_position">
+                    <div class="chat_btn_area">
                     <input class="chat" type="text" name="text" placeholder="メッセージを入力">
-                    <input class="chat" type="file" name="image">
-                    <button type="submit" class="">送信</button>
+                    <button type="submit" class="send_btn">送信</button>
+                    </div>
+                    <input class="file" type="file" name="image">
                 </div>
                 </form>
             </div>

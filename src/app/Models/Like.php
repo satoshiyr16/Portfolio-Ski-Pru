@@ -15,13 +15,4 @@ class Like extends Model
     {
         return $this->hasMany('App\Models\ProblemArticle');
     }
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User');
-    }
-
-    public function post()
-    {
-        return $this->belongsTo('App\Models\ProblemArticle');
-    }
 }

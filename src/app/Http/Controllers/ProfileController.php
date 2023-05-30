@@ -32,10 +32,10 @@ class ProfileController extends Controller
             ->where('user_id', \Auth::id())
             ->whereNull('deleted_at')
             ->orderBy('updated_at', 'DESC')
-            ->paginate(5);
+            ->paginate(5, ['*'], 'problem_page');
 
         $users = Auth::user();
-
+        $like_articles = $users->likes()->orderBy('updated_at', 'DESC')->paginate(5, ['*'], 'like_page');
         $followerCount = count(Follow::where('followed_user_id', $users->id)->get());
 
         $followCount = count(Follow::where('user_id', $users->id)->get());
@@ -43,7 +43,7 @@ class ProfileController extends Controller
         $follows = auth()->user()->follows()->get();
         $followers = auth()->user()->followers()->get();
 
-        return view('Profile', compact('articles', 'users','followCount','followerCount','follows','followers'));
+        return view('Profile', compact('articles', 'users','followCount','followerCount','follows','followers','like_articles'));
     }
 
     public function create()
