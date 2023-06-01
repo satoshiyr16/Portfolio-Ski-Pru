@@ -37,8 +37,6 @@ class CalendarController extends Controller
         $authId = \Auth::user()->id;
         session(['data' => $date]);
 
-
-
         return view('diary', ['date' => $date], compact('date'));
     }
 
@@ -51,6 +49,7 @@ class CalendarController extends Controller
             'skincare_content_text' => 'max:500',
             'images.*' => 'mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
+
         $authId = \Auth::user()->id;
         $diary_date = session('data');
 
@@ -162,6 +161,7 @@ class CalendarController extends Controller
 
         return redirect('/home');
     }
+    
     public function data_get(){
         $skin_diaries = SkinDiary::select('id', 'date', 'skin_tone')
         ->get()

@@ -1,0 +1,15 @@
+.border_none{
+  border: none;
+}
+.no-outline:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #949496;
+}
+.forget_password{
+  text-decoration: none;
+  color: black;
+}
+.forget_password:hover{
+  color: #949496;
+}

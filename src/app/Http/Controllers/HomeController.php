@@ -52,7 +52,6 @@ class HomeController extends Controller
             return view('home', compact('new_articles','follow_articles','today_diary','today','images'));
         }
 
-
         return view('home', compact('new_articles','follow_articles','today_diary','today'));
     }
 

@@ -22,7 +22,7 @@ class ProblemArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -80,9 +80,64 @@ class ProblemArticleController extends Controller
             }
         }
 
+        return redirect (route('home'));
+    }
+
+    public function edit($id)
+    {
+        $article = ProblemArticle::find($id);
+
+        return view('article_edit', compact('article'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required|max:50',
+            'image' => 'mimes:jpg,jpeg,png,pdf|max:2048',
+            'tag.*' => 'max:15',
+            'content' => 'required',
+        ]);
+        $article = ProblemArticle::find($id);
+        $article->title = $request->input('title');
+        $article->content = $request->input('content');
+        $article->user_id = \Auth::id();
+        $article->user_name = \Auth::user()->name;
+        $image = $request->file('image');
+        if($image){
+            $dir = 'sample';
+            $file = $request->file('image');
+
+            $file_name = $file->getClientOriginalName();
+            $file->storeAs('public/' , $file_name);
+
+            $article->name = $file_name;
+            $article->path = 'storage/' . $file_name;
+        }
+        $article->save();
+
+        $tags = $request->input('tag');
+        if($tags){
+            $article->tags()->detach();
+            // dd($tags);
+            foreach($tags as $tag){
+                if (!empty($tag)){
+                    $tag_table = Tag::firstOrCreate(['name' => $tag]);
+                    $tag_table->articles()->attach($article->id);
+                }
+            }
+        }
 
         return redirect (route('home'));
+    }
 
+    public function destroy($id)
+    {
+        $article = ProblemArticle::find($id);
+
+        $article->delete();
+
+        return redirect (route('home'));
     }
 
     public function TagSearch(Request $request)

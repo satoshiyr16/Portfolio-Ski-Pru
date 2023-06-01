@@ -33,6 +33,7 @@
         <div id="header_title_area">
             <a class="header_title" href="{{ url('/') }}">Ski Pru</a>
         </div>
+        @if(Auth::user())
         <div class="notification_nav_area">
             <div class="notification_area">
                 <div class="nav-item dropdown" style="display: flex">
@@ -100,6 +101,7 @@
                 </div>
             </nav>
         </div>
+        @endif
     </div>
 </div>
 <main class="py-4">

@@ -39,6 +39,7 @@
                 @csrf
                 <div class="chat_position">
                     <div class="chat_btn_area">
+                    <input value="{{ $userId }}" type="hidden" name="userId" />
                     <input class="chat" type="text" name="text" placeholder="メッセージを入力">
                     <button type="submit" class="send_btn">送信</button>
                     </div>

@@ -1,6 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.copy')
 
 @section('content')
+<head>
+    <link href="{{ asset('assets/css/auth.css') }}" rel="stylesheet">
+</head>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

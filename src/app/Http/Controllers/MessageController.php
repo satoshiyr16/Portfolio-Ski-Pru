@@ -12,8 +12,7 @@ use App\Models\Room;
 use App\Models\Room_User;
 use App\Models\Message;
 use App\Notifications\NotificationReceived;
-
-
+use Psy\Readline\Userland;
 
 class MessageController extends Controller
 {
@@ -35,53 +34,48 @@ class MessageController extends Controller
 
     public function index()
     {
-        $authId = Auth::user()->id;
+        $AuthId = Auth::user()->id;
         $rooms = Room::with('LatestMessages')
-            ->where('receiver_user_id', $authId)
-            ->orWhere('sender_user_id', $authId)
+            ->where('receiver_user_id', $AuthId)
+            ->orWhere('sender_user_id', $AuthId)
             ->get()
             ->sortByDesc(function($room) {
                 return $room->LatestMessages->updated_at;
             });
 
-        $follows = auth()->user()->follows()->paginate(10);
-
-        // $rooms = Room::with('LatestMessages')->where('receiver_user_id', $authId)->orWhere('sender_user_id',$authId)->paginate(5);
-
-        return view('message', compact('follows','rooms'));
+        return view('message', compact('rooms'));
     }
 
     public function create($userId)
     {
-        $authId = Auth::user()->id;
-        session(['data' => $userId]);
-
-        $sender_rooms = Room::where('sender_user_id', $authId)
+        $AuthId = Auth::user()->id;
+        $AuthUser_sender_rooms = Room::where('sender_user_id', $AuthId)
             ->where('receiver_user_id',$userId)
             ->first();
-
-        $receiver_rooms = Room::where('sender_user_id',$userId)
-            ->where('receiver_user_id', $authId)
+        $AuthUser_receiver_rooms = Room::where('sender_user_id',$userId)
+            ->where('receiver_user_id', $AuthId)
             ->first();
 
-        $follows = auth()->user()->follows()->get();
+        // メッセージが何もない
+        if (empty($AuthUser_sender_rooms) && empty($AuthUser_receiver_rooms)) {
+            return view('message_form',compact('userId'));
+        }
+        // 最初にメッセージを送ったのが自分の場合
+        if (!empty($AuthUser_sender_rooms) && empty($AuthUser_receiver_rooms)) {
+            $messages = Message::with('user')->where('room_id',$AuthUser_sender_rooms->id)->orderBy('updated_at','DESC')->get();
+            return view('message_form',compact('messages','userId'));
+        }
+        // 最初にメッセージを送ったのが相手の場合
+        if (empty($AuthUser_sender_rooms) && !empty($AuthUser_receiver_rooms)) {
+            $messages = Message::with('user')->where('room_id',$AuthUser_receiver_rooms->id)->orderBy('updated_at','DESC')->get();
+            return view('message_form',compact('messages','userId'));
+        }
 
-        if (empty($sender_rooms) && empty($receiver_rooms)) {
-            return view('message_form',compact('follows'));
-        }
-        if (!empty($sender_rooms) && empty($receiver_rooms)) {
-            $messages = Message::with('user')->where('room_id',$sender_rooms->id)->orderBy('updated_at','DESC')->get();
-
-            return view('message_form',compact('follows','messages'));
-        }
-        if (empty($sender_rooms) && !empty($receiver_rooms)) {
-            $messages = Message::with('user')->where('room_id',$receiver_rooms->id)->orderBy('updated_at','DESC')->get();
-            return view('message_form',compact('follows','messages'));
-        }
-        if (!empty($sender_rooms) && !empty($receiver_rooms)) {
-            $messages = Message::with('user')->where('room_id',$receiver_rooms->id)->orWhere('room_id',$sender_rooms->id)->orderBy('updated_at','DESC')->get();
-            return view('message_form',compact('follows','messages'));
-        }
+        //メッセージを送ったり受け取ったことがある場合
+        // if (!empty($AuthUser_sender_rooms) && !empty($AuthUser_receiver_rooms)) {
+        //     $messages = Message::with('user')->where('room_id',$AuthUser_receiver_rooms->id)->orWhere('room_id',$AuthUser_sender_rooms->id)->orderBy('updated_at','DESC')->get();
+        //     return view('message_form',compact('messages','userId'));
+        // }
     }
 
     public function store(Request $request)
@@ -90,153 +84,45 @@ class MessageController extends Controller
             'text' => 'required|max:50',
             'image' => 'mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
-        $auth_user = Auth::user();
-        $authId = $auth_user->id;
-        $message_send_user = $auth_user->name;
-        $userId = session('data');
+        $Auth_user = Auth::user();
+        $userId = $request->input('userId');
         $notification_user = User::find($userId);
+        $AuthUser_send_rooms = Room::where('sender_user_id', $Auth_user->id)->where('receiver_user_id', $userId)->first();
+
+        $AuthUser_receive_rooms = Room::where('sender_user_id', $userId)->where('receiver_user_id', $Auth_user->id)->first();
+
         $messages = new Message();
-
-        $first_rooms = Room::where('sender_user_id', $authId)->where('receiver_user_id', $userId)->first();
-
-        $already_rooms = Room::where('sender_user_id', $userId)->where('receiver_user_id', $authId)->first();
-
-        if (!$first_rooms && !$already_rooms) {
+        //初めてメッセージを送る
+        if (!$AuthUser_send_rooms && !$AuthUser_receive_rooms) {
             auth()->user()->rooms()->attach($userId);
-
-            $messages->text = $request->input('text');
-            $messages->user_id = \Auth::id();
-            $image = $request->file('image');
+            $new_room = Room::where('sender_user_id', $Auth_user->id)->where('receiver_user_id',$userId)->first();
+            $messages->room_id = $new_room->id;
+        } else {
+            // すでにメッセージを送っている & 初めてメッセージを送ったのが自分
+            if ($AuthUser_send_rooms) {
+                $messages->room_id = $AuthUser_send_rooms->id;
+            }
+            // すでにメッセージを送っている & 初めてメッセージを送ったのが相手
+            elseif ($AuthUser_receive_rooms) {
+                $messages->room_id = $AuthUser_receive_rooms->id;
+            }
+        }
+        $messages->text = $request->input('text');
+        $messages->user_id = $Auth_user->id;
+        $image = $request->file('image');
             if ($image) {
                 $file = $request->file('image');
                 $file_name = $file->getClientOriginalName();
                 $file->storeAs('public/', $file_name);
                 $messages->path = 'storage/' . $file_name;
             }
-            $messages->save();
-            $notificationData = [
-                'message' => "{$message_send_user} からメッセージ: {$messages->text}",
-                // 他のデータを必要に応じて追加
-            ];
-            $notification_user->notify(new NotificationReceived($notificationData));
-        } else {
-            // $first_rooms が存在する場合の処理
-            if ($first_rooms) {
-                $messages->text = $request->input('text');
-                $messages->user_id = \Auth::id();
-                $messages->room_id = $first_rooms->id;
-                $image = $request->file('image');
-                if ($image) {
-                    $file = $request->file('image');
-                    $file_name = $file->getClientOriginalName();
-                    $file->storeAs('public/', $file_name);
-                    $messages->path = 'storage/' . $file_name;
-                }
-                $messages->save();
-                $notificationData = [
-                    'message' => "{$message_send_user} からメッセージ: {$messages->text}",
-                    // 他のデータを必要に応じて追加
-                ];
-                $notification_user->notify(new NotificationReceived($notificationData));
-            }
-            // $already_rooms が存在する場合の処理
-            elseif ($already_rooms) {
-                $messages->text = $request->input('text');
-                $messages->user_id = \Auth::id();
-                $messages->room_id = $already_rooms->id;
-                $image = $request->file('image');
-                if ($image) {
-                    $file = $request->file('image');
-                    $file_name = $file->getClientOriginalName();
-                    $file->storeAs('public/', $file_name);
-                    $messages->path = 'storage/' . $file_name;
-                }
-                $messages->save();
-                $notificationData = [
-                    'message' => "{$message_send_user} からメッセージ: {$messages->text}",
-                    // 他のデータを必要に応じて追加
-                ];
-                $notification_user->notify(new NotificationReceived($notificationData));
-            }
-        }
-
-
+        $messages->save();
+        $notificationData = [
+            'message' => "{$Auth_user->name} からメッセージ: {$messages->text}",
+            // 他のデータを必要に応じて追加
+        ];
+        $notification_user->notify(new NotificationReceived($notificationData));
 
         return redirect()->back();
     }
 }
-// }
-// // 部屋がない
-// if(!$first_rooms && !$already_rooms){
-//     auth()->user()->rooms()->attach($userId);
-//     return;
-//     $messages->text = $request->input('text');
-//     $messages->user_id = \Auth::id();
-//     $messages->room_id = $first_rooms->id;
-//     $image = $request->file('image');
-//     if($image){
-//         $file = $request->file('image');
-//         $file_name = $file->getClientOriginalName();
-//         $file->storeAs('public/' , $file_name);
-//         $messages->path = 'storage/' . $file_name;
-//     }
-//     $messages->save();
-//     $notification_user->notify(new MessageReceived($messages->text));
-// } else {
-// // どっちもあてはまる
-// // receiver_authの場合 reverse_room_checks
-//     if($first_rooms){
-//         $messages->text = $request->input('text');
-//         $messages->user_id = \Auth::id();
-//         $messages->room_id = $first_rooms->id;
-//         $image = $request->file('image');
-//         if($image){
-//             $file = $request->file('image');
-//             $file_name = $file->getClientOriginalName();
-//             $file->storeAs('public/' , $file_name);
-//             $messages->path = 'storage/' . $file_name;
-//         }
-//         $messages->save();
-//         $notification_user->notify(new MessageReceived($messages));
-//     } else {
-//         $messages->text = $request->input('text');
-//         $messages->user_id = \Auth::id();
-//         $messages->room_id = $already_rooms->id;
-//         $image = $request->file('image');
-//         if($image){
-//             $file = $request->file('image');
-//             $file_name = $file->getClientOriginalName();
-//             $file->storeAs('public/' , $file_name);
-//             $messages->path = 'storage/' . $file_name;
-//         }
-//         $messages->save();
-//         $notification_user->notify(new MessageReceived($messages));
-//     }
-// }
-// if(!$first_rooms && $already_rooms){
-//     $messages->text = $request->input('text');
-//     $messages->user_id = \Auth::id();
-//     $messages->room_id = $already_rooms->id;
-//     $image = $request->file('image');
-//     if($image){
-//         $file = $request->file('image');
-//         $file_name = $file->getClientOriginalName();
-//         $file->storeAs('public/' , $file_name);
-//         $messages->path = 'storage/' . $file_name;
-//     }
-//     $messages->save();
-//     $notification_user->notify(new MessageReceived($messages));
-// } else {
-//     $messages->text = $request->input('text');
-//     $messages->user_id = \Auth::id();
-//     $messages->room_id = $first_rooms->id;
-//     $image = $request->file('image');
-//     if($image){
-//         $file = $request->file('image');
-//         $file_name = $file->getClientOriginalName();
-//         $file->storeAs('public/' , $file_name);
-//         $messages->path = 'storage/' . $file_name;
-//     }
-//     $messages->save();
-//     $notification_user->notify(new MessageReceived($messages));
-// }
