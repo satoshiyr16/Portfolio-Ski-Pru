@@ -22,7 +22,7 @@ class ProblemArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     /**
      * Store a newly created resource in storage.
      *

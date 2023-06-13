@@ -70,12 +70,6 @@ class MessageController extends Controller
             $messages = Message::with('user')->where('room_id',$AuthUser_receiver_rooms->id)->orderBy('updated_at','DESC')->get();
             return view('message_form',compact('messages','userId'));
         }
-
-        //メッセージを送ったり受け取ったことがある場合
-        // if (!empty($AuthUser_sender_rooms) && !empty($AuthUser_receiver_rooms)) {
-        //     $messages = Message::with('user')->where('room_id',$AuthUser_receiver_rooms->id)->orWhere('room_id',$AuthUser_sender_rooms->id)->orderBy('updated_at','DESC')->get();
-        //     return view('message_form',compact('messages','userId'));
-        // }
     }
 
     public function store(Request $request)

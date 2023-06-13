@@ -13,7 +13,10 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   # PHPの拡張ライブラリをインストール
-  docker-php-ext-install intl pdo_mysql zip bcmath
+  docker-php-ext-install intl pdo_mysql zip bcmath 
+
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 
