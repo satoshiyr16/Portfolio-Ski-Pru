@@ -8,7 +8,7 @@ use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
 use App\Models\Like;
-use App\Models\Comment;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\user;
 use App\Models\Follow;
@@ -40,7 +40,6 @@ class ProblemArticleController extends Controller
         $already_followed = Follow::where('user_id', $user_id)->where('followed_user_id', $article_id)->first();
         $user_check = $article->user_id === $user_id;
         $comments = Comment::where('problem_article_id',$id)->orderBy('updated_at','DESC')->get();
-
 
         return view('article_view', compact('article','already_liked','article_user','article_id','user_id','already_followed','user_check','comments'));
     }
