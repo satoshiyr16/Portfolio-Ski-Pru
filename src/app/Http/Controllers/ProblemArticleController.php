@@ -8,7 +8,7 @@ use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
 use App\Models\Like;
-
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Models\user;
 use App\Models\Follow;
