@@ -60,8 +60,8 @@
                                 <a href="{{ route('article_edit', ['id'=>$article->id]) }}" claas="edit_btn"><i class="fas fa-edit fa-lg" style="color: #000000;"></i></a>
                             </div>
                             <div class="delete">
-                                @csrf
                                 <form action="{{ route('destroy', ['id'=>$article->id]) }}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <button type="submit" class="delete_btn"><i class="fas fa-trash fa-lg"></i></button>
                                 </form>
                             </div>
