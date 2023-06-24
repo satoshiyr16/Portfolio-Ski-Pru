@@ -43,7 +43,7 @@ class ProfileController extends Controller
         $follows = auth()->user()->follows()->get();
         $followers = auth()->user()->followers()->get();
 
-        return view('Profile', compact('articles', 'users','followCount','followerCount','follows','followers','like_articles'));
+        return view('profile', compact('articles', 'users','followCount','followerCount','follows','followers','like_articles'));
     }
 
     public function create()
@@ -80,7 +80,7 @@ class ProfileController extends Controller
         }
         $users->save();
 
-        return redirect('Profile');
+        return redirect('profile');
     }
 
     public function show($id)
