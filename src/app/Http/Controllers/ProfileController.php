@@ -78,9 +78,10 @@ class ProfileController extends Controller
 
             $users->path = 'storage/' . $file_name;
         }
+        
         $users->save();
 
-        return redirect('profile');
+        return redirect('Profile');
     }
 
     public function show($id)
