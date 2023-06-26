@@ -136,8 +136,7 @@ class ProblemArticleController extends Controller
 
         $article->delete();
 
-        return 'success';
-        // return redirect (route('home'));
+        return redirect (route('profile'));
     }
 
     public function TagSearch(Request $request)
