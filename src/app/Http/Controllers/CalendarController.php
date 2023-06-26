@@ -161,9 +161,11 @@ class CalendarController extends Controller
 
         return redirect('/home');
     }
-    
+
     public function data_get(){
+        $authId = \Auth::user()->id;
         $skin_diaries = SkinDiary::select('id', 'date', 'skin_tone')
+        ->where('user_id',  $authId)
         ->get()
         ->map(function ($skin_diary) {
             return [
