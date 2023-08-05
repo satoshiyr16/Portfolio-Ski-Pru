@@ -23,7 +23,7 @@
         <div class="title_login_area">
             <div class="title_area">
                 <p class="title">Ski Pru</p>
-                <p class="subtitle">\ 肌のセルフケアを手助けする /</p>
+                <p class="subtitle">~ 肌のセルフケアを手助けする ~</p>
             </div>
             @if (Route::has('login'))
             <div class="login_area">
