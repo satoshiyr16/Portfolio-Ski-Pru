@@ -1,27 +1,19 @@
-name: Deploy to EC2
+name: EC2 auto deploy
 
 on:
-  push:
-    branches:
-      - main
-
+ push:
+   branches:
+     - main
+ 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+ build:
+   runs-on: ubuntu-latest
+   steps:
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+     - name: Deploy
+       run: |
+         echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
+         chmod 600 private_key
+         ssh -oStrictHostKeyChecking=no ${{ secrets.USER_NAME }}@${{ secrets.HOST }} -i private_key "cd ~/docker-laravel-handson && git pull origin main"
+         
 
-    - name: SSH and Deploy
-      env:
-        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        HOST: ${{ secrets.EC2_HOST }}
-        USER: ${{ secrets.EC2_USER }}
-      run: |
-        echo "$PRIVATE_KEY" > private_key
-        chmod 600 private_key
-        ssh -o StrictHostKeyChecking=no -i private_key $USER@$HOST <<EOF
-          cd ~/docker-laravel-handson  
-          git pull origin main  
-        EOF
