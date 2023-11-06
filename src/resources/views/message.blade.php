@@ -1,11 +1,9 @@
 @extends('layouts.header')
-
-@section('content')
-<head>
+@section('additionHeader')
     <link href="{{ asset('assets/css/message.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+@endsection
+@section('content')
 <body>
     <div class="container">
         <div class="message_area">
@@ -18,7 +16,7 @@
                     @if($room->sender_user_id == Auth::user()->id )
                     <div class="room_user">
                         @if($room->receiver->path)
-                        <img src="{{  asset($room->receiver->path) }}" class="room_user_img" alt="プロフィール画像">
+                        <img src="{{ asset($room->receiver->path) }}" class="room_user_img" alt="プロフィール画像">
                         @else
                         <img src="{{ asset('images/Profile.png') }}" class="room_user_img" alt="プロフィール画像">
                         @endif
@@ -53,7 +51,6 @@
                     </div>
                     @endif
                 </div>
-                {{-- foreachで回す限り、ないデータが一つでもあるとエラーがでる --}}
             @endforeach
             </div>
         </div>
