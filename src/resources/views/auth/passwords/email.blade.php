@@ -1,4 +1,4 @@
-@extends('layouts.copy')
+@extends('layouts.header')
 
 @section('content')
 <head>
