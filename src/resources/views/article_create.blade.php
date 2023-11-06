@@ -1,9 +1,9 @@
 @extends('layouts.header')
-
-@section('content')
-<head>
+@section('additionHeader')
     <link href="{{ asset('assets/css/article_create.css') }}" rel="stylesheet" >
-</head>
+    <script src="{{ asset('assets/js/article_create.js') }}" type="module"></script>
+@endsection
+@section('content')
 <div class="container">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -20,7 +20,7 @@
         <p class="name">新規投稿</p>
         <div class="text_area">
             <div class="title_area">
-                <input type="title" class="title" id="" placeholder="タイトル" name="title">
+                <input type="title" class="title" id="" placeholder="タイトル" name="title" value="{{ old('title') }}">
             </div>
             <div class="tag_area">
                 <input type="text" class="tag" name="tag[]" placeholder="タグ">
@@ -29,7 +29,7 @@
                 <input type="file" class="file" name="image">
             </div>
             <div class="content_area">
-                <textarea class="content" placeholder="悩み" id="" name="content"></textarea>
+                <textarea class="content" placeholder="悩み" id="" name="content">{{ old('content') }}</textarea>
             </div>
         </div>
         <div class="button_area">
@@ -38,6 +38,4 @@
     </form>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('assets/js/article_create.js') }}"></script>
 @endsection
