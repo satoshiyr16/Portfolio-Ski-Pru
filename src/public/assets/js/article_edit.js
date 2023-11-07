@@ -17,3 +17,10 @@ $('.edit_tag').on('input', '.tag:last-child', function() {
     $('.edit_tag').append(newTag);
   }
 });
+
+let img;
+$('.delete_img').on('click', function () {
+    img = $('.image').detach();
+    $(".delete_img").css("display", "none");
+    $(".img_file").css("display", "block");
+});

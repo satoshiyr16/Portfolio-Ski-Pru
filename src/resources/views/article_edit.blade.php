@@ -1,9 +1,9 @@
 @extends('layouts.header')
-
-@section('content')
-<head>
+@section('additionHeader')
     <link href="{{ asset('assets/css/article_edit.css') }}" rel="stylesheet" >
-</head>
+    <script src="{{ asset('assets/js/article_edit.js') }}" type="module"></script>
+@endsection
+@section('content')
 <div class="container">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -50,17 +50,4 @@
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('assets/js/article_edit.js') }}"></script>
-<script type="module">
-    let img;
-    $('.delete_img').on('click', function () {
-        img = $('.image').detach();
-        $(".delete_img").css("display", "none");
-        $(".img_file").css("display", "block");
-    });
-    // $('.again_img').on('click', function () {
-    //     $('.edit_image').append(img);
-    // });
-</script>
 @endsection
