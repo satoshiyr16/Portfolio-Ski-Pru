@@ -1,24 +1,23 @@
 @extends('layouts.header')
-
-@section('content')
-<head>
+@section('additionHeader')
     <link href="{{ asset('assets/css/article_view.css') }}" rel="stylesheet">
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+    <script src="{{ asset('assets/js/like.js') }}"></script>
+    <script src="{{ asset('assets/js/follow.js') }}"></script>
+@endsection
+@section('content')
 <div class="container">
     @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="article_area">
         <div class="article">
             <div class="text_area">
@@ -84,7 +83,7 @@
                     <form method="POST" action="{{ route('comment', ['id'=>$article->id]) }}">
                     @csrf
                         <input value="{{ $article->id }}" type="hidden" name="article_id" />
-                        <input type="text" name="comment" class="comment"></textarea>
+                        <input type="text" name="comment" class="comment">
                         <button type="submit" class="comment_btn">コメント</button>
                     </form>
                 </div>
@@ -92,40 +91,4 @@
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('assets/js/like.js') }}"></script>
-<script>
-    function follow(userId) {
-        $('.follow').css("display", "none");
-        $('.un_follow').css("display", "block");
-        $.ajax({
-        // これがないと419エラーが出ます
-        headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") },
-        url: `/follow/${userId}`,
-        type: "POST",
-        })
-        .done((data) => {
-            console.log(data);
-        })
-        .fail((data) => {
-            console.log(data);
-        });
-    }
-    function destroy(userId) {
-        $('.follow').css("display", "block");
-        $('.un_follow').css("display", "none");
-        $.ajax({
-        // これがないと419エラーが出ます
-        headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") },
-        url: `/follow/${userId}/destroy`,
-        type: "POST",
-    })
-        .done((data) => {
-        console.log(data);
-        })
-        .fail((data) => {
-        console.log(data);
-        });
-    }
-</script>
 @endsection
