@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
   @if ($errors->any())
-    @include('common/validation_error', [ 'errors' => $errors ])
+    @include('common/validation_error', ['errors' => $errors ])
   @endif
   <div class="search_page_area">
       @include('common/articles/tag_search_form', [
