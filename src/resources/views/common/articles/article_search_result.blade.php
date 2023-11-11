@@ -1,5 +1,4 @@
 <div class="article_area row">
-        @if(!empty($articleResult))
         @foreach ($articleResults as $articleResult)
             <div class="article_content_area col-md-4">
                 @if(isset( $articleResult->path ))
@@ -22,9 +21,4 @@
         <div class="pagination">
             {!! $articleResults->appends(request()->input())->links('pagination::bootstrap-4') !!}
         </div>
-        @else
-            <div class="result_none_area">
-                <p class="result_none">検索結果はありません</p>
-            </div>
-        @endif
 </div>

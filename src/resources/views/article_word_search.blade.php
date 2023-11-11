@@ -1,11 +1,9 @@
 @extends('layouts.header')
-
-@section('content')
-<head>
+@section('additionHeader')
     <link href="{{ asset('assets/css/article_search.css') }}" rel="stylesheet" >
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+@endsection
+@section('content')
 <div class="container">
     @if ($errors->any())
         @include('common/validation_error', ['errors' => $errors ])
@@ -22,7 +20,6 @@
         <div class="search_result_area">
           <div class="result_content_area">
             @if(!empty($word_article_results))
-                @dd($word_article_results)
               @include('common/articles/article_search_result',['articleResults' => $word_article_results])
             @else
               <div class="result_none_area">

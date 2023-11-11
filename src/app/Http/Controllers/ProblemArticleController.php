@@ -145,20 +145,17 @@ class ProblemArticleController extends Controller
             'tag_word' => 'max:15',
         ]);
         $tag_word = $request->input('tag_word');
-        $articles = [];
-        if($tag_word){
-            $tag = Tag::where('name',$tag_word)->first();
-            if($tag){
+        if($tag_word) {
+            $tag = Tag::where('name', $tag_word)->first();
+            if ($tag) {
                 $tag_article_results = $tag->articles()->withCount('likes')
-                ->paginate(6);
-                return view('article_tag_search', compact('tag_article_results'));
+                    ->paginate(6);
             } else {
                 $tag_article_results = null;
             }
         } else {
             $tag_article_results = null;
         }
-
         return view('article_tag_search', compact('tag_article_results'));
     }
 
@@ -172,16 +169,13 @@ class ProblemArticleController extends Controller
             $word_article_results = ProblemArticle::where('title', 'like', '%' . $word . '%')
             ->withCount('likes')
             ->paginate(6);
-            if(empty($word_article_results)){
+            if($word_article_results->total() === 0){
                 $word_article_results = null;
             }
-            return view('article_word_search', compact('word_article_results'));
         } else {
             $word_article_results = null;
         }
-
         return view('article_word_search', compact('word_article_results'));
-
     }
 
     public function Comment(Request $request)
