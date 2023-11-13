@@ -1,1 +1,7 @@
-# docker-laravel-handson
+# SkiPru
+## 概要
+【肌のセルフケアを促す】をテーマにしたサービスです。
+肌の情報を記録・共有・収集する事で、肌のセルフケアの手助けになるように意識して作りました！
+
+https://qiita.com/satoshiyr16/private/6b0cfb6f8c4d50977c2f
+　に詳しく書いています。
