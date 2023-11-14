@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
-    <link href="{{ asset('assets/css/top.css') }}" rel="stylesheet" >
+    <link href="{{ asset('assets/css/toppage.css') }}" rel="stylesheet" >
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -28,13 +28,13 @@
             @if (Route::has('login'))
             <div class="login_area">
                 @auth
-                    <a href="{{ url('/home') }}" button type="button" class="login">ホームへ</button></a>
+                    <a href="{{ url('/home') }}"><button type="button" class="login">ホームへ</button></a>
                 @else
-                    <a href="{{ route('login') }}" button type="button" class="login">ログイン</button></a>
+                    <a href="{{ route('login') }}"><button type="button" class="login">ログイン</button></a>
                     @if (Route::has('register'))
-                    <a href="{{ route('register') }}" button type="button" class="login">新規登録</button></a>
+                    <a href="{{ route('register') }}"><button type="button" class="login">新規登録</button></a>
                     @endif
-                    <a href="{{ route('guest.login') }}"button type="button" class="login">ゲストログイン</a>
+                    <a href="{{ route('guest.login') }}"><button type="button" class="login">ゲストログイン</button></a>
                 @endauth
             </div>
             @endif
