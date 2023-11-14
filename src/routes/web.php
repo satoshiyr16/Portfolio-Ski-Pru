@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('toppage');
 });
 
+Route::get('/toptest', function () {
+    return view('layouts/toppage_header');
+});
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {

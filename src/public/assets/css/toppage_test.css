@@ -1,0 +1,35 @@
+@media (max-width: 375px){
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .p-header_area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        width: auto;
+        .p-header_img_area{
+            position: relative;
+            .logo_img {
+                width: 100px;
+                height: 65px;
+            }
+        }
+        .p-header_button_area {
+            position: absolute;
+            right: 0;
+            .guest_login_btn{
+                border: 1px solid #f1f1f1;
+                font-size: 0.6rem;
+            }
+        }
+    }
+    .main_img{
+        width: 375px;
+        height: 250px;
+    }
+
+
+}
