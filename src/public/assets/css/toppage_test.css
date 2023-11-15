@@ -1,35 +1,121 @@
+p{
+    margin: 0;
+    padding: 0;
+}
 @media (max-width: 375px){
     body{
         margin: 0;
         padding: 0;
+        font-family: 'Noto Serif JP', serif;
     }
-
-    .p-header_area {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 70px;
+    .l-top_page_wrapper{
         width: auto;
-        .p-header_img_area{
-            position: relative;
-            .logo_img {
-                width: 100px;
-                height: 65px;
+        .auth_btn{
+            border: 1px solid #f1f1f1;
+            font-size: 0.6rem;
+            height: 30px;
+            border-radius: 5px;
+        }
+        .auth_btn:hover{
+            color: #d5d5d5;
+        }
+
+        .l-header_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            .p-header_img_area{
+                position: relative;
+                .logo_img {
+                    width: 100px;
+                    height: 65px;
+                }
+            }
+            .p-header_button_area {
+                position: absolute;
+                right: 0;
+                margin-right: 10px;
             }
         }
-        .p-header_button_area {
-            position: absolute;
-            right: 0;
-            .guest_login_btn{
-                border: 1px solid #f1f1f1;
-                font-size: 0.6rem;
+        .main_img{
+            width: 375px;
+            height: 250px;
+        }
+        .l-auth_area{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            .auth_text{
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            .auth_btn{
+                width: 130px;
+            }
+            .p-guest_login_area{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+            .p-registration_login_area{
+                margin: 10px auto;
+                .c-registration_login{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 15px 0 0;
+                }
+            }
+        }
+        .l-function_introduction_area {
+            margin-top: 30px;
+            .p-function_area_title {
+                text-align: center;
+            }
+            .p-introduction_area{
+                display: flex;
+                justify-content: center;
+                margin: 20px 0 10px;
+                .introduction_text{
+                    flex: 1;
+                    text-align: center;
+                    .function_title{
+                        display: inline-block;
+                        margin: 15px auto 20px;
+                    }
+                    .orange{
+                        border-bottom: 1px solid orange;
+                    }
+                    .yellow_green{
+                        border-bottom: 1px solid yellowgreen;
+                    }
+                    .light_blue{
+                        border-bottom: 1px solid lightblue;
+                    }
+                    .introduction{
+                        font-size: 0.7rem;
+                        margin-bottom: 15px;
+                        padding: 0 5px;
+                    }
+                }
+                .calendar_img{
+                    display: block;
+                    flex: 1;
+                    width: 200px;
+                    height: 170px;
+                }
+                .diary_img{
+                    display: block;
+                    flex: 1;
+                    width: 200px;
+                    height: 150px;
+                    margin: auto 0;
+                }
             }
         }
     }
-    .main_img{
-        width: 375px;
-        height: 250px;
-    }
-
-
 }
