@@ -21,15 +21,16 @@
         @if (Route::has('login'))
         <div class="p-header_button_area">
             @auth
-                <a href="{{ route('home') }}"><button class="auth_btn">ホームへ</button></a>
+                <a href="{{ route('home') }}"><button class="auth_btn header_ver">ホームへ</button></a>
             @else
-                <a href="{{ route('guest.login') }}"><button class="auth_btn">ゲストログイン</button></a>
+                <a href="{{ route('guest.login') }}"><button class="auth_btn header_area_ver">ゲストログイン</button></a>
             @endauth
         </div>
         @endif
     </div>
     <div class="l-main_img_area">
         <img class="main_img" src="{{ asset('images/toppage_banner.png') }}">
+        <img class="main_img_pc_ver" src="{{ asset('images/toppage_banner_pc_ver.png') }}">
     </div>
     @if (Route::has('login'))
         @auth
@@ -38,20 +39,20 @@
             <div class="p-guest_login_area">
                 <p class="auth_text">ゲストログインはこちらから</p>
                 <a href="{{ route('guest.login') }}">
-                    <button class="auth_btn">ゲストログイン</button>
+                    <button class="auth_btn auth_area_ver">ゲストログイン</button>
                 </a>
             </div>
             <div class="p-registration_login_area">
                 <div class="c-registration_login">
                     <p class="auth_text">新規登録はこちらから</p>
                     <a href="{{ route('register') }}">
-                        <button class="auth_btn">新規登録</button>
+                        <button class="auth_btn auth_area_ver">新規登録</button>
                     </a>
                 </div>
                 <div class="c-registration_login">
                     <p class="auth_text">ログインはこちらから</p>
                     <a href="{{ route('login') }}">
-                        <button class="auth_btn">ログイン</button>
+                        <button class="auth_btn auth_area_ver">ログイン</button>
                     </a>
                 </div>
             </div>
@@ -77,10 +78,10 @@
             <div class="introduction_text">
                 <p class="function_title yellow_green">カレンダー機能</p>
                 <p class="introduction">
-                    セルフケア情報をカレンダーを通して見ることができます
+                    セルフケア情報をカレンダーを通して見ることができます<span class="pc_ver"><br></span>
                 </p>
                 <p class="introduction">
-                    毎日記録した情報から, 新たなアイテムを用いて変化がどのようにあったかなどを確認しよう
+                    毎日記録した情報から, 新たなアイテムを用いて変化がどのように<br>あったかなどを確認しよう
                 </p>
             </div>
         </div>

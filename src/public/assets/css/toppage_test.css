@@ -1,13 +1,269 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+}
 p{
     margin: 0;
     padding: 0;
 }
-@media (max-width: 375px){
-    body{
-        margin: 0;
-        padding: 0;
-        font-family: 'Noto Serif JP', serif;
+.auth_btn{
+    border: 1px solid #f1f1f1;
+    font-size: 0.6rem;
+    height: 30px;
+    border-radius: 5px;
+}
+.auth_btn:hover{
+    color: #969696;
+    cursor: pointer;
+}
+@media (min-width: 1025px){
+    .l-top_page_wrapper{
+        width: auto;
+
+        .l-header_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            .p-header_img_area{
+                position: relative;
+                .logo_img {
+                    width: 125px;
+                    height: 80px;
+                }
+            }
+            .p-header_button_area {
+                position: absolute;
+                right: 0;
+                margin-right: 20px;
+            }
+            .header_area_ver {
+                width: 100px;
+                height: 35px;
+            }
+        }
+        .l-main_img_area{
+            width: 100%;
+            .main_img{
+                display: none;
+            }
+            .main_img_pc_ver{
+                width: 100%;
+                height: 800px;
+            }
+        }
+        .l-auth_area{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 225px;
+            .auth_text{
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            .auth_area_ver{
+                width: 200px;
+                height: 40px;
+            }
+            .p-guest_login_area{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+            .p-registration_login_area{
+                margin: 10px auto;
+                .c-registration_login{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 30px;
+                }
+            }
+        }
+        .l-function_introduction_area {
+            margin-top: 50px;
+            .p-function_area_title {
+                text-align: center;
+                font-size: 1.7rem;
+                margin-bottom: 40px;
+            }
+            .p-introduction_area {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 60px 0 80px;
+                max-height: 500px;
+                .introduction_text {
+                    flex: 1;
+                    text-align: center;
+                    .function_title {
+                        font-size: 1.5rem;
+                        display: inline-block;
+                        margin: 15px auto 50px;
+                    }
+                    .orange {
+                        border-bottom: 1px solid orange;
+                    }
+                    .yellow_green {
+                        border-bottom: 1px solid yellowgreen;
+                    }
+                    .light_blue {
+                        border-bottom: 1px solid lightblue;
+                    }
+                    .introduction {
+                        font-size: 1.2rem;
+                        margin-bottom: 15px;
+                        padding: 0 5px;
+                        .pc_ver {
+                            display: block;
+                        }
+                    }
+                }
+                .calendar_img{
+                    display: block;
+                    flex: 1;
+                    width: 100%;
+                    height: 500px;
+                }
+                .diary_img{
+                    display: block;
+                    flex: 1;
+                    width: 100%;
+                    height: 400px;
+                    margin: auto 0;
+                }
+            }
+        }
     }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .l-top_page_wrapper{
+        width: auto;
+
+        .l-header_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            .p-header_img_area{
+                position: relative;
+                .logo_img {
+                    width: 125px;
+                    height: 80px;
+                }
+            }
+            .p-header_button_area {
+                position: absolute;
+                right: 0;
+                margin-right: 20px;
+            }
+            .header_area_ver {
+                width: 100px;
+                height: 35px;
+            }
+        }
+        .l-main_img_area{
+            width: 100%;
+            .main_img{
+                width: 100%;
+                height: 600px;
+            }
+            .main_img_pc_ver {
+                display: none;
+            }
+        }
+        .l-auth_area{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 225px;
+            .auth_text{
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            .auth_area_ver{
+                width: 200px;
+                height: 40px;
+            }
+            .p-guest_login_area{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+            .p-registration_login_area{
+                margin: 10px auto;
+                .c-registration_login{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 30px;
+                }
+            }
+        }
+        .l-function_introduction_area {
+            margin-top: 50px;
+            .p-function_area_title {
+                text-align: center;
+                font-size: 1.7rem;
+                margin-bottom: 40px;
+            }
+            .p-introduction_area {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 60px 0 80px;
+                max-height: 500px;
+                .introduction_text {
+                    flex: 1;
+                    text-align: center;
+                    .function_title {
+                        font-size: 1.5rem;
+                        display: inline-block;
+                        margin: 15px auto 50px;
+                    }
+                    .orange {
+                        border-bottom: 1px solid orange;
+                    }
+                    .yellow_green {
+                        border-bottom: 1px solid yellowgreen;
+                    }
+                    .light_blue {
+                        border-bottom: 1px solid lightblue;
+                    }
+                    .introduction {
+                        font-size: 1.2rem;
+                        margin-bottom: 15px;
+                        padding: 0 5px;
+                        .pc_ver {
+                            display: block;
+                        }
+                    }
+                }
+                .calendar_img{
+                    display: block;
+                    flex: 1;
+                    width: 100%;
+                    height: 500px;
+                }
+                .diary_img{
+                    display: block;
+                    flex: 1;
+                    width: 100%;
+                    height: 400px;
+                    margin: auto 0;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px){
     .l-top_page_wrapper{
         width: auto;
         .auth_btn{
@@ -38,9 +294,16 @@ p{
                 margin-right: 10px;
             }
         }
-        .main_img{
-            width: 375px;
-            height: 250px;
+        .l-main_img_area{
+            width: 100%;
+
+            .main_img{
+                width: 100%;
+                height: 250px;
+            }
+            .main_img_pc_ver {
+                display: none;
+            }
         }
         .l-auth_area{
             display: flex;
@@ -79,7 +342,7 @@ p{
             .p-introduction_area{
                 display: flex;
                 justify-content: center;
-                margin: 20px 0 10px;
+                margin: 20px 0 40px;
                 .introduction_text{
                     flex: 1;
                     text-align: center;
