@@ -65,10 +65,10 @@
             <div class="introduction_text">
                 <p class="function_title orange">日記機能</p>
                 <p class="introduction">
-                    肌トラブルは明日急に<br>治るものではありません
+                    肌トラブルは明日急に<br>治るものではありません<span class="br_pc"><br></span>
                 </p>
                 <p class="introduction">
-                    原因となる食生活・睡眠・スキンケアなどの原因の可視化,<br>セルフケア継続を手助けします
+                    原因となる食生活・睡眠・スキンケアなどの原因の可視化,<span class="br_pc"><br></span>セルフケア継続を手助けします
                 </p>
             </div>
             <img class="diary_img" src="{{ asset('images/diary.png') }}">
@@ -78,10 +78,10 @@
             <div class="introduction_text">
                 <p class="function_title yellow_green">カレンダー機能</p>
                 <p class="introduction">
-                    セルフケア情報をカレンダーを通して見ることができます<span class="pc_ver"><br></span>
+                    セルフケア情報をカレンダーを通して見ることができます
                 </p>
                 <p class="introduction">
-                    毎日記録した情報から, 新たなアイテムを用いて変化がどのように<br>あったかなどを確認しよう
+                    毎日記録した情報から, 新たなアイテムを用いて変化がどのようにあったかなどを確認しよう
                 </p>
             </div>
         </div>
