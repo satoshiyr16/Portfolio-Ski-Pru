@@ -21,7 +21,7 @@
         @if (Route::has('login'))
         <div class="p-header_button_area">
             @auth
-                <a href="{{ route('home') }}"><button class="auth_btn header_ver">ホームへ</button></a>
+                <a href="{{ route('home') }}"><button class="auth_btn header_area_ver">ホームへ</button></a>
             @else
                 <a href="{{ route('guest.login') }}"><button class="auth_btn header_area_ver">ゲストログイン</button></a>
             @endauth
