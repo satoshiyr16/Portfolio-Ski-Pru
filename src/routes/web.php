@@ -24,12 +24,9 @@ use App\Models\SkinDiary;
 |
 */
 
-Route::get('/', function () {
-    return view('toppage');
-});
 
-Route::get('/toptest', function () {
-    return view('layouts/toppage_header');
+Route::get('/', function () {
+    return view('top_page');
 });
 
 Auth::routes();
