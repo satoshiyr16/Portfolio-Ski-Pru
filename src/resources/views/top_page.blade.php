@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="{{ asset('assets/css/toppage_test.css') }}" rel="stylesheet" >
+    <link href="{{ asset('assets/css/top_page.css') }}" rel="stylesheet" >
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
