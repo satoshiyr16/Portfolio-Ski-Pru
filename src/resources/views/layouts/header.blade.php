@@ -14,6 +14,8 @@
     </style>
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="{{ asset('assets/css/layout.css') }}" rel="stylesheet" >
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ asset('assets/js/layouts.js') }}"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @yield('additionHeader')
 </head>
@@ -26,30 +28,30 @@
         </div>
         @if(Auth::user())
         <div class="notification_nav_area">
-            <div class="notification_area">
-                <div class="nav-item dropdown" style="display: flex">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="font-size: large">通知<i class="far fa-bell" style="margin-left: 10px;"></i><span style="margin-left: 5px;font-size: small;">{{ Auth::user()->unreadNotifications->count() }}</span></a>
-                    <ul class="dropdown-menu notification_scroll" style="border: none;
-                    background: rgba(255,255,255,0.5);">
-                    @if(auth()->user()->notifications->isNotEmpty())
-                        <li><a class="dropdown-item" id="delete-notifications-btn">すべての通知を消す</a></li>
-                        @foreach(auth()->user()->notifications()->get(); as $notification)
-                            @if(!empty($notification->data['message']))
-                            <p class="notification_content">{{ $notification->data['message']}}</p>
-                            @endif
-                            @if(!empty($notification->data['comment']))
-                            <p class="notification_content">{{ $notification->data['comment']}}</p>
-                            @endif
-                            @if(!empty($notification->data['follow']))
-                            <p class="notification_content">{{ $notification->data['follow']}}</p>
-                            @endif
-                        @endforeach
-                    @else
-                    <p class="none_notification">通知はありません</p>
-                    @endif
-                    </ul>
-                </div>
-            </div>
+{{--            <div class="notification_area">--}}
+{{--                <div class="nav-item dropdown" style="display: flex">--}}
+{{--                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="font-size: large">通知<i class="far fa-bell" style="margin-left: 10px;"></i><span style="margin-left: 5px;font-size: small;">{{ Auth::user()->unreadNotifications->count() }}</span></a>--}}
+{{--                    <ul class="dropdown-menu notification_scroll" style="border: none;--}}
+{{--                    background: rgba(255,255,255,0.5);">--}}
+{{--                        @if(auth()->user()->notifications->isNotEmpty())--}}
+{{--                            <li><a class="dropdown-item" id="delete-notifications-btn">すべての通知を消す</a></li>--}}
+{{--                            @foreach(auth()->user()->notifications()->get(); as $notification)--}}
+{{--                                @if(!empty($notification->data['message']))--}}
+{{--                                    <p class="notification_content">{{ $notification->data['message']}}</p>--}}
+{{--                                @endif--}}
+{{--                                @if(!empty($notification->data['comment']))--}}
+{{--                                    <p class="notification_content">{{ $notification->data['comment']}}</p>--}}
+{{--                                @endif--}}
+{{--                                @if(!empty($notification->data['follow']))--}}
+{{--                                    <p class="notification_content">{{ $notification->data['follow']}}</p>--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        @else--}}
+{{--                            <p class="none_notification">通知はありません</p>--}}
+{{--                        @endif--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div id="openbtn"><span></span><span></span><span></span></div>
             <nav id="g-nav">
 
@@ -99,30 +101,28 @@
     @yield('content')
 </main>
 
-<script src="{{ asset('assets/js/layouts.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="module">
-    $(document).ready(function() {
-        $('#delete-notifications-btn').click(function(e) {
-            e.preventDefault();
-            $.ajax({
-                url: '{{ route("notifications_delete") }}',
-                type: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                success: function(response) {
-                    // 削除成功時の処理
-                    console.log('通知が削除されました');
-                    location.reload();
-                },
-                error: function(xhr) {
-                    // エラー時の処理
-                    console.log('削除エラー');
-                }
-            });
-        });
-    });
-</script>
+{{--<script type="module">--}}
+{{--    $(document).ready(function() {--}}
+{{--        $('#delete-notifications-btn').click(function(e) {--}}
+{{--            e.preventDefault();--}}
+{{--            $.ajax({--}}
+{{--                url: '{{ route("notifications_delete") }}',--}}
+{{--                type: 'POST',--}}
+{{--                headers: {--}}
+{{--                    'X-CSRF-TOKEN': '{{ csrf_token() }}'--}}
+{{--                },--}}
+{{--                success: function(response) {--}}
+{{--                    // 削除成功時の処理--}}
+{{--                    console.log('通知が削除されました');--}}
+{{--                    location.reload();--}}
+{{--                },--}}
+{{--                error: function(xhr) {--}}
+{{--                    // エラー時の処理--}}
+{{--                    console.log('削除エラー');--}}
+{{--                }--}}
+{{--            });--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
 </body>
 </html>
