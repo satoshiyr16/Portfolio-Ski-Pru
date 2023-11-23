@@ -1,14 +1,10 @@
 @extends('layouts.header')
-
+@section('additionHeader')
+    <link href="{{ asset('assets/css/calendar.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+@endsection
 @section('content')
-<head>
-  <link href="{{ asset('assets/css/calendar.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-  <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
 <div class="article_blade_area">
   @if($today_diary)
   <div class="today_diary_area">
@@ -202,9 +198,6 @@
         @endforeach
       @endif
     </div>
-    {{-- <div class="pagination">
-    {!! $new_articles->links('pagination::bootstrap-4') !!}
-    </div> --}}
   </div>
 </div>
 
