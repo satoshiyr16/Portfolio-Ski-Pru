@@ -84,31 +84,6 @@
         </div>
       </div>
       <div class="edit_modal_area">
-        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 10px">
-          画像を見る
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">画像</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                @if($images)
-                @foreach ($images as $image)
-                <img src="{{ asset($image) }}" alt="image" style="width: 200px; height:200px;">
-                @endforeach
-                @endif
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="diary_edit_area">
           <a class="diary_edit" href="{{ route('diary_edit', ['date'=>$today]) }}">肌日記を編集する →</a>
         </div>

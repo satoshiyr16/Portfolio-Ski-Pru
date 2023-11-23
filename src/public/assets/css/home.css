@@ -162,7 +162,7 @@
   }
   .edit_modal_area{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     width: 800px;
     margin: 15px 0 0;
   }
@@ -338,7 +338,7 @@
   }
   .edit_modal_area{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     width: 800px;
     margin: 15px 0 0;
   }
@@ -515,7 +515,7 @@
   }
   .edit_modal_area{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     width: 500px;
     margin: 15px 0 0;
   }

@@ -4,6 +4,7 @@
 <head>
   <link href="{{ asset('assets/css/diary.css') }}" rel="stylesheet">
   <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="{{ asset('assets/js/diary_edit.js') }}"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <div class="container">
@@ -127,46 +128,46 @@
           <input class="radio" type="radio" name="menstruation" value="生理中" {{ $skin_diary->menstruation === '生理中' ? 'checked' : '' }}>生理中
         </div>
       </div>
-      <div class="skin_status_area">
-        <h2 class="skin_status_title">写真を選択</h2>
-          @if($images)
-          <div class="img_area">
-              @foreach ($images as $image)
-              <div class="image-preview" data-image-id="{{ $image->id }}">
-                  <img src="{{ asset($image->path) }}" alt="image" style="width: 100px; height:100px; margin:0 10px;">
-                  <button type="button" class="btn btn-danger btn-sm remove-image">削除</button>
-              </div>
-              @endforeach
-          </div>
-          @endif
-          <input type="file" class="file" name="images[]" multiple>
-      </div>
+{{--      <div class="skin_status_area">--}}
+{{--        <h2 class="skin_status_title">写真を選択</h2>--}}
+{{--          @if($images)--}}
+{{--          <div class="img_area">--}}
+{{--              @foreach ($images as $image)--}}
+{{--              <div class="image-preview" data-image-id="{{ $image->id }}">--}}
+{{--                  <img src="{{ asset($image->path) }}" alt="image" style="width: 100px; height:100px; margin:0 10px;">--}}
+{{--                  <button type="button" class="btn btn-danger btn-sm remove-image">削除</button>--}}
+{{--              </div>--}}
+{{--              @endforeach--}}
+{{--          </div>--}}
+{{--          @endif--}}
+{{--          <input type="file" class="file" name="images[]" multiple>--}}
+{{--      </div>--}}
       <div class="edit_modal_area">
-        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin: 0 0 0 10px;">
-          画像を見る
-        </button>
+{{--        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin: 0 0 0 10px;">--}}
+{{--          画像を見る--}}
+{{--        </button>--}}
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">画像</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                @if($images)
-                @foreach ($images as $image)
-                <img src="{{ asset($image->path) }}" alt="image" style="width: 200px; height:200px;">
-                @endforeach
-                @endif
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+{{--        <!-- Modal -->--}}
+{{--        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--}}
+{{--          <div class="modal-dialog">--}}
+{{--            <div class="modal-content">--}}
+{{--              <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="staticBackdropLabel">画像</h5>--}}
+{{--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--              </div>--}}
+{{--              <div class="modal-body">--}}
+{{--                @if($images)--}}
+{{--                @foreach ($images as $image)--}}
+{{--                <img src="{{ asset($image->path) }}" alt="image" style="width: 200px; height:200px;">--}}
+{{--                @endforeach--}}
+{{--                @endif--}}
+{{--              </div>--}}
+{{--              <div class="modal-footer">--}}
+{{--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
+{{--              </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
+{{--        </div>--}}
         <div class="button_area">
         <button type="submit" class="post">投稿</button>
         </div>
@@ -175,6 +176,5 @@
   </form>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('assets/js/diary_edit.js') }}"></script>
+{{--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
 @endsection

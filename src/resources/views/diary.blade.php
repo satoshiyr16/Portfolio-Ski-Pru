@@ -108,10 +108,10 @@
           <input class="radio" type="radio" name="menstruation" value="生理中">生理中
         </div>
       </div>
-      <div class="skin_status_area">
-        <h2 class="skin_status_title">写真を選択</h2>
-        <input type="file" class="file" name="images[]" multiple>
-      </div>
+{{--      <div class="skin_status_area">--}}
+{{--        <h2 class="skin_status_title">写真を選択</h2>--}}
+{{--        <input type="file" class="file" name="images[]" multiple>--}}
+{{--      </div>--}}
       <div class="button_area">
         <button type="submit" class="post" style="margin-bottom: 10px;">投稿</button>
     </div>
@@ -120,6 +120,6 @@
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{{ asset('assets/js/diary.js') }}"></script>
+<script src="{{ asset('assets/js/diary.js') }}" type="module"></script>
 
 @endsection
